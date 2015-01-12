@@ -1,0 +1,94 @@
+@import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic);
+/**
+ * Theme for C4Q 2014 Year in Review
+ *
+ */
+
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+
+.reveal {
+  font-family: "Cardo", serif; 
+  font-weight: 300;
+  font-size: 1.4em;
+  font-weight: normal; }
+
+.black{
+	background-color: black; }
+
+img.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+.center{
+	text-align: center;
+}
+hr.title{
+	width: 5%;
+	height: 6px;
+	color:#000;
+	background-color:#3CB54A;
+	border: none;
+	margin-bottom: 20px;
+}
+h4{
+	text-transform: uppercase;
+}
+p.toptitle{
+	font-family: 'Helvetica', serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: .8em;
+}
+p.subtitle{
+	font-size: .6em;
+}
+div.funfact{
+	border: 6px solid #3CB54A;
+	padding: 20px;
+	width: 50%;
+	-webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+}
+p.quotation{
+	font-size: 1.2em;
+}
+
+/*********************************************
+ * SPECIFIC SLIDES
+ *********************************************/
+
+#logoslide{
+	text-align: center;
+}
+#logoslide img{
+	margin: 30% 0;
+}
+
+/*********************************************
+ * CHAPTER SLIDES
+ *********************************************/
+.chapterslide {
+	color: #ffffff;
+	position: relative;
+}
+.chapterslide h2{
+	font-size: 2em;
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #3CB54A;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
