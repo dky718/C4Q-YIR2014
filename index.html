@@ -16,7 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/2014yir.css">
-		<!-- <link rel="stylesheet" href="css/theme/default.css" id="theme">-->
+		<link rel="stylesheet" href="css/animations.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -31,6 +31,7 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
+		
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -45,16 +46,11 @@
 
 				<section>
 					<section id="logoslide" data-background="img/inflicted.png" data-background-repeat="repeat" data-background-size="200px">
-						<img src="img/00_intro-YIRlogo.png">
+						<img src="img/00_intro-YIRlogo.png" id="intrologo" class="animate"><br/>
+						<div class="fadeIn">
+							<img src="img/00_intro-arrow.png" id="arrowdown" class="pulse">
+						</div>
 					</section>
-
-					<!--<section id="introletter">
-						<p>Dear friends,</p>
-
-						<p>2014 was a year of growth.</p><br/>
-
-						<p>Much love,<br/>C4Q</p>
-					</section> -->
 					
 					<section data-background="#000000" class="chapterslide" id="mission">
 						<h2 style="margin-top: 160px;">Our mission is to foster the Queens tech ecosystem to increase economic opportunity and to transform the world's most diverse community into a hub of innovation and entrepreneurship.</h2><br/>
@@ -77,7 +73,7 @@
 							<li>First C4Q Retreat at the Dome in Upstate NY (found an airbnb)</li>
 						</ul>
 						<br/><br/><br/>
-						<div class="funfact">
+						<div id="c4qretreat" class="funfact stretchRight">
 							<p>Maybe a call out like this to highlight "fun facts"?</p>
 							<hr>
 							<p>Discovered that we all like 90s music, OJ with pulp--oh, and we're all summer babies. We also have a knack for "winning" board games & cooking great meals. #teamretreat #staffbonding</p>
@@ -204,10 +200,11 @@
 						<p class="center toptitle">Community Building</p>
 						<hr class="title">
 						<p>Maybe this section can be big background images with one liners like Kickstarter</p>
+						<img src="img/bigapps2014.jpg">
+						<img src="img/nexttopmakers.jpg">
+						<img src="img/qtmlogo.jpg">
 						<ul>
 							<li>6 QTM (2,092 total members)</li>
-							<li>Big Apps</li>
-							<li>NYC Next Top Makers</li>
 							<li>Speaker Series</li>
 							<li>Health Entrepreneurship with QC</li>
 							<li>Smithsonian APA</li>
@@ -300,6 +297,7 @@
 
 			Reveal.initialize({
 				mouseWheel: true,
+				controls: false,
 				transition: 'linear',
 				backgroundTransition: 'slide',
 				history: true,
@@ -307,7 +305,10 @@
 				progress: true,
 			});
 
-		</script>
+			$('.animate').click(function() {
+				$(this).addClass("bounce");
+			});
 
+		</script>
 	</body>
 </html>

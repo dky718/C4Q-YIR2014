@@ -64,9 +64,15 @@ p.quotation{
 #logoslide{
 	text-align: center;
 }
-#logoslide img{
-	margin: 30% 0;
+#intrologo{
+	margin: 25% 0;
 }
+#arrowdown{
+	width: 40px;
+	position: relative;
+    bottom: -60px;
+}
+
 
 /*********************************************
  * CHAPTER SLIDES
