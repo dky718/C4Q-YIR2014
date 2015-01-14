@@ -61,6 +61,13 @@ p.quotation{
 .column3:last-child{
 	margin-right: 0;
 }
+.button{
+	background-color: #004799;
+	color: #ffffff !important;
+	padding: 15px 25px !important;
+	text-decoration: none;
+	font-family: 'Helvetica', serif;
+}
 /*********************************************
  * SPECIFIC SLIDES
  *********************************************/
@@ -74,7 +81,7 @@ p.quotation{
 #arrowdown{
 	width: 40px;
 	position: relative;
-    bottom: -60px;
+    bottom: -10px;
 }
 
 ul.plus{
@@ -86,6 +93,7 @@ ul.plus{
 	content: "+  ";
     padding-right: 5px;
 }
+
 /*********************************************
  * CHAPTER SLIDES
  *********************************************/
