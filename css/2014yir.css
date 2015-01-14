@@ -13,11 +13,8 @@
   font-family: "Cardo", serif; 
   font-weight: 300;
   font-size: 1.4em;
-  font-weight: normal; }
-
-.black{
-	background-color: black; }
-
+  font-weight: normal; 
+}
 img.center{
 	margin-left: auto;
 	margin-right: auto;
@@ -56,7 +53,14 @@ div.funfact{
 p.quotation{
 	font-size: 1.2em;
 }
-
+.column3{
+	width: 31.25%;
+	float: left;
+	margin-right: 20px !important;
+}
+.column3:last-child{
+	margin-right: 0;
+}
 /*********************************************
  * SPECIFIC SLIDES
  *********************************************/
@@ -73,7 +77,15 @@ p.quotation{
     bottom: -60px;
 }
 
-
+ul.plus{
+	list-style: none;
+	margin-left: 0;
+    padding-left: 0;
+}
+.plus li:before{
+	content: "+  ";
+    padding-right: 5px;
+}
 /*********************************************
  * CHAPTER SLIDES
  *********************************************/
@@ -84,6 +96,20 @@ p.quotation{
 .chapterslide h2{
 	font-size: 2em;
 }
+
+/*********************************************
+ * PROGRAM SLIDES
+ *********************************************/
+.programslide{
+	color: #ffffff;
+}
+.description{
+	background-color: #000000;
+	width: 75%;
+	padding: 20px;
+	margin: 0 auto;
+}
+
 
 /*********************************************
  * PROGRESS BAR

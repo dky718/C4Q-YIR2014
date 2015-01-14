@@ -53,7 +53,7 @@ body {
 
 body {
 	position: relative;
-	line-height: 1;
+	line-height: 1.2em;
 }
 
 ::selection {
@@ -79,6 +79,7 @@ body {
 
 	word-wrap: break-word;
 	line-height: 1.2;
+	margin-bottom: 10px;
 }
 
 .reveal h1 { font-size: 3.77em; }
@@ -241,6 +242,7 @@ body {
 /** Prevents layering issues in certain browser/transition combinations */
 .reveal a {
 	position: relative;
+	color: #004799;
 }
 
 .reveal strong,
