@@ -15,6 +15,10 @@
   font-size: 1.4em;
   font-weight: normal; 
 }
+.container{
+	width: 100%;
+	height: 100%;
+}
 img.center{
 	margin-left: auto;
 	margin-right: auto;
@@ -37,15 +41,17 @@ p.toptitle{
 	font-family: 'Helvetica', serif;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-size: .8em;
+	font-size: .62em;
+	letter-spacing: 2px;
 }
 p.subtitle{
 	font-size: .6em;
 }
 div.funfact{
-	border: 6px solid #3CB54A;
+	border: 3px solid #3CB54A;
 	padding: 20px;
-	width: 50%;
+	width: 75%;
+	background-color: #ffffff;
 	-webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
 	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
@@ -53,21 +59,41 @@ div.funfact{
 p.quotation{
 	font-size: 1.2em;
 }
+.column2{
+	width: 45%;
+	float: left;
+	margin-right: 45px !important;
+}
+	.column2:last-child:{
+		margin-right: 0;
+	}
+
 .column3{
 	width: 31.25%;
 	float: left;
 	margin-right: 20px !important;
 }
-.column3:last-child{
-	margin-right: 0;
-}
+	.column3:last-child,
+	.column3two:last-child{
+		margin-right: 0;
+	}
+	.column3two{
+		width: 62.5%;
+		float: left;
+		margin-right: 20px !important;
+	}
+
 .button{
+	font-family: 'Helvetica', serif !important; 
 	background-color: #004799;
 	color: #ffffff !important;
 	padding: 15px 25px !important;
 	text-decoration: none;
-	font-family: 'Helvetica', serif;
+	text-transform: uppercase;
+	font-size: .62em !important;;
+	letter-spacing: 2px;
 }
+\
 /*********************************************
  * SPECIFIC SLIDES
  *********************************************/
@@ -75,23 +101,67 @@ p.quotation{
 #logoslide{
 	text-align: center;
 }
-#intrologo{
-	margin: 25% 0;
-}
-#arrowdown{
-	width: 40px;
-	position: relative;
-    bottom: -10px;
-}
+	#intrologo{
+		margin: 35% 0;
+	}
+	#arrowdown{
+		width: 40px;
+		position: relative;
+	    bottom: 100px;
+	}
 
 ul.plus{
 	list-style: none;
 	margin-left: 0;
     padding-left: 0;
 }
-.plus li:before{
-	content: "+  ";
-    padding-right: 5px;
+	.plus li:before{
+		content: "+  ";
+	    padding-right: 5px;
+	}
+	.plus li>p{
+		padding-left: 1.7em;
+	}
+
+#ourteam{
+
+}
+
+#volunteercommittee p, 
+#volunteercommittee h3{
+}
+	#volunteercommittee img{
+		margin-bottom: 5px;
+	}
+	#volunteercommittee hr.title{
+		background-color:#ffffff;
+	}
+	.committeehr{
+		width: 10%;
+		height: 1px;
+		color:#000;
+		background-color:#ffffff;
+		border: none;
+		margin-bottom: 10px;
+	}
+
+.graph-bar{
+	height: 12px;
+	display: table-cell;
+}
+	.bar-2013{
+		width: 60px;
+		display: inline-block;
+		background-color: #6EC829;
+	}
+	.bar-2014{
+		width: 250px;
+		display: inline-block;
+		background-color: #6EC829;
+	}
+
+#c4qtechbash p{
+	color: #ffffff;
 }
 
 /*********************************************
@@ -101,22 +171,22 @@ ul.plus{
 	color: #ffffff;
 	position: relative;
 }
-.chapterslide h2{
-	font-size: 2em;
-}
+	.chapterslide h2{
+		font-size: 2em;
+	}
 
 /*********************************************
  * PROGRAM SLIDES
  *********************************************/
 .programslide{
-	color: #ffffff;
 }
-.description{
-	background-color: #000000;
-	width: 75%;
-	padding: 20px;
-	margin: 0 auto;
-}
+	.description{
+		background-color: #ffffff;
+		width: 640px;
+		padding: 80px !important;
+		margin: 24% auto !important;
+		text-align: center;
+	}
 
 
 /*********************************************
@@ -132,3 +202,12 @@ ul.plus{
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+
+
+
+
+
+  img.imagetest{
+  	height: 140px;
+  }
