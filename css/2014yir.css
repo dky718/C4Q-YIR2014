@@ -10,10 +10,10 @@
  *********************************************/
 
 .reveal {
-  font-family: "Cardo", serif; 
+  font-family: "Cardo", serif;
   font-weight: 300;
   font-size: 1.4em;
-  font-weight: normal; 
+  font-weight: normal;
 }
 .container{
 	width: 100%;
@@ -38,7 +38,7 @@ hr.title{
 h4{
 	text-transform: uppercase;
 }
-p.toptitle{
+p.toptitle, .nav-panel .tooltip {
 	font-family: 'Helvetica', serif;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -86,7 +86,7 @@ p.quotation{
 	}
 
 .button{
-	font-family: 'Helvetica', serif !important; 
+	font-family: 'Helvetica', serif !important;
 	background-color: #004799;
 	color: #ffffff !important;
 	padding: 15px 25px !important;
@@ -132,7 +132,7 @@ ul.plus{
 	max-height: 60px;
 	padding: 12px;
 }
-#volunteercommittee p, 
+#volunteercommittee p,
 #volunteercommittee h3{
 }
 	#volunteercommittee img{
@@ -254,3 +254,73 @@ div.ourworklogo{
   img.imagetest{
   	height: 140px;
   }
+
+/*********************************************
+ * VERTICAL NAV                              *
+ *********************************************/
+.nav-panel {
+  position: fixed;
+  z-index: 30;
+  display: inline-block;
+  margin: 30px;
+  padding: 10px 0px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.4);
+  color: #F9F9F9; /*subtle white*/
+}
+.nav-panel ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.nav-panel li {
+  cursor: pointer;
+  padding: 5px 10px;
+  position: relative;
+}
+.nav-panel .left-arrow {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right:6px solid #3676e8;
+  position: absolute;
+  left: 32px;
+  top: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.nav-panel .tooltip {
+  opacity: 0;
+  background-color: #3676e8;
+  padding: 5px;
+  position: absolute;
+  min-width: 100px;
+  text-align: center;
+  left: 38px;
+  top: 0px;
+  transition: opacity 0.2s;
+}
+.nav-panel li:hover .tooltip {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.nav-panel li:hover .left-arrow {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.nav-panel li:hover .circle{
+  border-color: yellow;
+  transform: scale(1.2);
+}
+.nav-panel .circle {
+  position: relative;
+  overflow: hidden;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  border: 0.12rem solid #fff;
+  border-radius: 50%;
+  transition: border-color, transform 0.3s;
+  will-change: border-color, transform;
+}
