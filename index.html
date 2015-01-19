@@ -76,10 +76,6 @@
           </li>
           <li>
             <div class="circle"></div><div class="left-arrow"></div>
-            <span class="tooltip">Section 4</span>
-          </li>
-          <li>
-            <div class="circle"></div><div class="left-arrow"></div>
             <span class="tooltip">Section 9</span>
           </li>
           <li>
@@ -801,17 +797,17 @@
 		</script>
         <script>
           function c4qHightNavCircle(verticalIndex) {
-            $('.nav-panel ul').children[verticalIndex];
+            var items = Array.prototype.slice.call(document.querySelectorAll('.nav-panel ul li'));
+            items.forEach(function(i) { i.className = ''; });
+            items[verticalIndex].className = 'active';
+            //$('.nav-panel ul').children[verticalIndex];
           }
           Reveal.addEventListener('slidechanged', function(e) {
-            var vIndex = e.indexv;
-            console.log('got v index: ', vIndex);
-            //$()
+            c4qHightNavCircle(e.indexv);
           });
-
-          //function c4qYIRScroll() {
-
-          //}
+          Reveal.addEventListener('ready', function(e) {
+              c4qHightNavCircle(e.indexv);
+          });
           //document.addEventListener('DOMMouseScroll', onDocumentMouseScroll, false); // FF
           //document.addEventListener('mousewheel', onDocumentMouseScroll, false);
         </script>
