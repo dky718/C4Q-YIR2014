@@ -28,6 +28,7 @@ img.center{
 }
 hr.title{
 	width: 5%;
+	min-width: 25px;
 	height: 6px;
 	color:#000;
 	background-color:#3CB54A;
@@ -50,11 +51,12 @@ p.subtitle{
 div.funfact{
 	border: 3px solid #3CB54A;
 	padding: 20px;
-	width: 75%;
+	width: 100%;
+	max-width: 600px;
 	background-color: #ffffff;
-	-webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+	/*-webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
-	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);*/
 }
 p.quotation{
 	font-size: 1.2em;
@@ -103,13 +105,13 @@ p.quotation{
 }
 	#intrologo{
 		margin: 35% 0;
+		min-width: 300px;
 	}
 	#arrowdown{
 		width: 40px;
 		position: relative;
 	    bottom: 100px;
 	}
-
 ul.plus{
 	list-style: none;
 	margin-left: 0;
@@ -122,7 +124,6 @@ ul.plus{
 	.plus li>p{
 		padding-left: 1.7em;
 	}
-
 #ourteam{
 
 }
@@ -209,7 +210,9 @@ div.ourworkimage>img{
 div.ourworklogo{
 	width: 280px;
 }
+.queenstechcomp{
 
+}
 /*********************************************
  * CHAPTER SLIDES
  *********************************************/

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<path fill="#FFFFFF" d="M50,2c26.471,0,48,21.53,48,48c0,26.471-21.529,48-48,48C23.53,98,2,76.471,2,50C2,23.53,23.53,2,50,2z"/>
+<path fill="#6EC829" d="M50,0c27.609,0,50,22.39,50,50c0,27.609-22.391,50-50,50C22.39,100,0,77.609,0,50C0,22.39,22.39,0,50,0z
+	 M98,50C98,23.53,76.471,2,50,2C23.53,2,2,23.53,2,50c0,26.471,21.53,48,48,48C76.471,98,98,76.471,98,50z"/>
+<g>
+	<line fill="none" stroke="#555554" stroke-width="2" stroke-miterlimit="10" x1="48.076" y1="66.745" x2="41.308" y2="59.979"/>
+	<polyline fill="none" stroke="#555554" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="75,39.819 
+		48.076,66.745 39.215,68.838 41.308,59.979 68.234,33.053 	"/>
+	
+		<line fill="none" stroke="#555554" stroke-linecap="round" stroke-miterlimit="10" x1="67.143" y1="34.142" x2="73.911" y2="40.912"/>
+	
+		<line fill="none" stroke="#555554" stroke-linecap="round" stroke-miterlimit="10" x1="66.05" y1="35.236" x2="72.818" y2="42.003"/>
+	
+		<line fill="none" stroke="#555554" stroke-linecap="round" stroke-miterlimit="10" x1="64.96" y1="36.324" x2="71.729" y2="43.093"/>
+	<path fill="none" stroke="#555554" stroke-width="2.1" stroke-linecap="round" stroke-miterlimit="10" d="M68.234,33.053
+		c1.867-1.87,4.896-1.87,6.766,0c1.87,1.87,1.87,4.899,0,6.766"/>
+	<path fill="#555554" d="M41.501,68.3c-0.095-0.422-0.269-0.825-0.595-1.153c-0.327-0.326-0.731-0.498-1.153-0.595l-0.538,2.286
+		L41.501,68.3z"/>
+</g>
+<line fill="none" stroke="#555554" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="35.215" y1="69.838" x2="22.402" y2="69.838"/>
+</svg>

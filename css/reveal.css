@@ -258,9 +258,8 @@ body {
 .reveal ol,
 .reveal ul {
 	display: inline-block;
-
 	text-align: left;
-	margin: 0 0 0 1em;
+	margin: 0 0 0 0;
 }
 
 .reveal ol {
@@ -288,7 +287,7 @@ body {
 }
 
 .reveal p {
-	margin-bottom: 5px;
+	margin-bottom: 6px;
 	line-height: 1.2em;
 }
 
