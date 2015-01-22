@@ -7,7 +7,7 @@
 <path fill="#6EC829" d="M50,0c27.609,0,50,22.39,50,50c0,27.609-22.391,50-50,50C22.39,100,0,77.609,0,50C0,22.39,22.39,0,50,0z
 	 M98,50C98,23.53,76.471,2,50,2C23.53,2,2,23.53,2,50c0,26.471,21.53,48,48,48C76.471,98,98,76.471,98,50z"/>
 <rect x="31" y="31" fill="none" stroke="#555554" stroke-width="2" stroke-miterlimit="10" width="12.667" height="37.999"/>
-<rect x="43.667" y="38.212" fill="none" stroke="#555554" stroke-width="2" stroke-miterlimit="10" width="12.666" height="23.574"/>
+<rect x="43.667" y="38.212" fill="none" stroke="#555554" stroke-miterlimit="10" width="12.666" height="23.574"/>
 <rect x="56.333" y="31" fill="none" stroke="#555554" stroke-width="2" stroke-miterlimit="10" width="12.667" height="37.999"/>
 <g>
 	<rect x="59.869" y="34.535" fill="none" stroke="#555554" stroke-miterlimit="10" width="5.594" height="30.926"/>
