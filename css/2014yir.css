@@ -296,7 +296,6 @@ div.ourworklogo{
   position: relative;
 }
 .tooltip-wrapper .left-arrow {
-  cursor: pointer;
   z-index: 999;
   width: 0;
   height: 0;
@@ -310,7 +309,6 @@ div.ourworklogo{
   transition: opacity 0.2s;
 }
 .tooltip-wrapper .tooltip {
-  cursor: pointer;
   z-index: 999;
   opacity: 0;
   background-color: #3676e8;
@@ -338,6 +336,9 @@ div.ourworklogo{
   border-radius: 50%;
   transition: border-color, transform 0.3s;
   will-change: border-color, transform;
+}
+.nav-panel ul li:active .circle, .nav-panel .circle:active {
+  background: rgba(255,255,255,0.4);
 }
 .nav-panel li:hover .circle, .nav-panel .active .circle {
   border-color: rgba(255,255,255,0.8);

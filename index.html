@@ -64,6 +64,7 @@
             <li data-text="Section 25"><div class="circle"></div></li>
             <li data-text="Section 26"><div class="circle"></div></li>
             <li data-text="Section 27"><div class="circle"></div></li>
+            <li data-text="Section 28"><div class="circle"></div></li>
           </ul>
         </div>
       </div>
@@ -686,7 +687,7 @@
             c4qHightNavCircle(e.indexv);
           });
 
-          $('.nav-panel li').mouseover(function(e) {
+          $('.nav-panel li').mouseover(function() {
             var li = $(this);
             var tooltip = $('.tooltip-wrapper .tooltip');
             var pos = li.position();
@@ -695,6 +696,20 @@
             tooltip.text(li.data().text);
             tooltip.css({top: top, left: 31, opacity: 1});
             arrow.css({top: top + 8, left: 25, opacity: 1});
+          });
+
+          $('.nav-panel li').mouseout(function() {
+            var tooltip = $('.tooltip-wrapper .tooltip');
+            var arrow = $('.tooltip-wrapper .left-arrow');
+            arrow.css({opacity: 0});
+            tooltip.css({opacity: 0});
+          });
+
+          $('.nav-panel li').click(function() {
+           var items = Array.prototype.slice.call($('.nav-panel li'));
+           var item = $(this);
+           var index = items.indexOf(item[0]);
+           if (index > -1) { Reveal.slide(0, index); }
           });
         </script>
 	</body>
