@@ -258,16 +258,29 @@ div.ourworklogo{
 /*********************************************
  * VERTICAL NAV                              *
  *********************************************/
+.nav-wrapper {
+  overflow: hidden;
+  width: 32px;
+  position: absolute;
+  height: 100%;
+}
+.tooltip-wrapper {
+  overflow: visible;
+  position: absolute;
+}
+.nav-panel::-webkit-scrollbar {
+  display: none;
+}
 .nav-panel {
-  position: fixed;
+  position: absolute;
+  overflow-y: auto;
+  width: 44px;
+  top: 0;
+  left: 0;
   z-index: 30;
-  display: inline-block;
-  min-height: 500px;
-  max-height: 592px;
-  height: 90%;
-  margin: 20px 0 20px 15px;
+  display: block;
+  max-height: 100%;
   padding: 10px 0;
-  border-radius: 10px;
   background-color: rgba(0,0,0,.4);
   color: #F9F9F9; /*subtle white*/
 }
@@ -282,7 +295,9 @@ div.ourworklogo{
   padding: 5px 10px;
   position: relative;
 }
-.nav-panel .left-arrow {
+.tooltip-wrapper .left-arrow {
+  cursor: pointer;
+  z-index: 999;
   width: 0;
   height: 0;
   border-top: 6px solid transparent;
@@ -294,7 +309,9 @@ div.ourworklogo{
   opacity: 0;
   transition: opacity 0.2s;
 }
-.nav-panel .tooltip {
+.tooltip-wrapper .tooltip {
+  cursor: pointer;
+  z-index: 999;
   opacity: 0;
   background-color: #3676e8;
   padding: 5px;
@@ -305,11 +322,11 @@ div.ourworklogo{
   top: -3px;
   transition: opacity 0.2s;
 }
-.nav-panel li:hover .tooltip {
+.tooltip-wrapper :hover .tooltip {
   transition: opacity 0.5s;
   opacity: 1;
 }
-.nav-panel li:hover .left-arrow {
+.tooltip-wrapper:hover .left-arrow {
   transition: opacity 0.5s;
   opacity: 1;
 }
