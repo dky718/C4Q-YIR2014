@@ -687,10 +687,11 @@
             tooltip.text(li.data().text);
             var pos = li.position();
             var arrow = $('.tooltip-wrapper .left-arrow');
-            tooltip.css({top: pos.top,
+            var top = pos.top - 2;
+            tooltip.css({top: top,
                         left: 31,
                         opacity: 1});
-            arrow.css({top: pos.top + 6, left: 25, opacity: 1});
+            arrow.css({top: top + 8, left: 25, opacity: 1});
           });
         </script>
 	</body>

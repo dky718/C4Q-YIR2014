@@ -38,7 +38,7 @@ hr.title{
 h4{
 	text-transform: uppercase;
 }
-p.toptitle, .nav-panel .tooltip {
+p.toptitle, .tooltip-wrapper .tooltip {
 	font-family: 'Helvetica', serif;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -321,6 +321,7 @@ div.ourworklogo{
   left: 32px;
   top: -3px;
   transition: opacity 0.2s;
+  color: #F9F9F9; /*subtle white*/
 }
 .tooltip-wrapper :hover .tooltip {
   transition: opacity 0.5s;
