@@ -692,7 +692,7 @@
 					<section>
 						<p class="center toptitle">Access Code 1.0 Updates</p>
 						<hr class="title">
-						<div class="column2 slideRight">
+						<div class="column2 useSlideRight">
 							<q>"Access Code was a phenomenal experience for me, and I’m very grateful for the opportunity I had to be a founding student. It catapulted me into a career in tech, and I now have extensive experience as a founding iOS developer working at Fly Labs on a mobile video editing app (editonthefly.com). That experience has also given me the confidence to pursue more skills, and I can proudly say that I am now a capable full-stack web developer as well."</q>
 							<br/><br/>
 							<p class="subtitle">Eli Bierman, Access Code 1.0</p>
@@ -812,6 +812,19 @@
           Reveal.addEventListener('ready', function(e) {
               c4qHightNavCircle(e.indexv);
           });
+$('.slideRight').loop(function(i) {
+
+$(window).scroll(function() {
+		$('#animatedElement').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+400) {
+				$(this).addClass("actual-slideRight");
+			}
+		});
+	});
+    })
         </script>
 	</body>
 </html>
