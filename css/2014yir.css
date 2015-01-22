@@ -325,11 +325,9 @@ div.ourworklogo{
 }
 .tooltip-wrapper :hover .tooltip {
   transition: opacity 0.5s;
-  opacity: 1;
 }
 .tooltip-wrapper:hover .left-arrow {
   transition: opacity 0.5s;
-  opacity: 1;
 }
 .nav-panel .circle {
   position: relative;
@@ -342,9 +340,9 @@ div.ourworklogo{
   will-change: border-color, transform;
 }
 .nav-panel li:hover .circle, .nav-panel .active .circle {
-  border-color: yellow;
+  border-color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.8);
 }
-
 .nav-panel li:hover .circle{
-  transform: scale(1.2);
+  transform: scale(1.4);
 }

@@ -37,26 +37,33 @@
       <div class="nav-wrapper">
         <div class="nav-panel">
           <ul>
-            <li class="active" data-text="Section 1"> <div class="circle"></div> </li>
-            <li data-text="Section 2"> <div class="circle"></div> </li>
-            <li data-text="Section 3"> <div class="circle"></div> </li>
-            <li data-text="Section 4"> <div class="circle"></div> </li>
-            <li data-text="Section 5"> <div class="circle"></div> </li>
-            <li data-text="Section 6"> <div class="circle"></div> </li>
-            <li data-text="Section 7"> <div class="circle"></div> </li>
-            <li data-text="Section 8"> <div class="circle"></div> </li>
-            <li data-text="Section 9"> <div class="circle"></div> </li>
-            <li data-text="Section 10"> <div class="circle"></div> </li>
-            <li data-text="Section 11"> <div class="circle"></div> </li>
-            <li data-text="Section 12"> <div class="circle"></div> </li>
-            <li data-text="Section 13"> <div class="circle"></div> </li>
-            <li data-text="Section 14"> <div class="circle"></div> </li>
-            <li data-text="Section 15"> <div class="circle"></div> </li>
-            <li data-text="Section 16"> <div class="circle"></div> </li>
-            <li data-text="Section 17"> <div class="circle"></div> </li>
-            <li data-text="Section 18"> <div class="circle"></div> </li>
-            <li data-text="Section 19"> <div class="circle"></div> </li>
-            <li  data-text="Section 20"> <div class="circle"> </div> </li>
+            <li data-text="Section 1"> <div class="circle"></div> </li>
+            <li data-text="Section 2"><div class="circle"></div></li>
+            <li data-text="Section 3"><div class="circle"></div></li>
+            <li data-text="Section 4"><div class="circle"></div></li>
+            <li data-text="Section 5"><div class="circle"></div></li>
+            <li data-text="Section 6"><div class="circle"></div></li>
+            <li data-text="Section 7"><div class="circle"></div></li>
+            <li data-text="Section 8"><div class="circle"></div></li>
+            <li data-text="Section 9"><div class="circle"></div></li>
+            <li data-text="Section 10"><div class="circle"></div></li>
+            <li data-text="Section 11"><div class="circle"></div></li>
+            <li data-text="Section 12"><div class="circle"></div></li>
+            <li data-text="Section 13"><div class="circle"></div></li>
+            <li data-text="Section 14"><div class="circle"></div></li>
+            <li data-text="Section 15"><div class="circle"></div></li>
+            <li data-text="Section 16"><div class="circle"></div></li>
+            <li data-text="Section 17"><div class="circle"></div></li>
+            <li data-text="Section 18"><div class="circle"></div></li>
+            <li data-text="Section 19"><div class="circle"></div></li>
+            <li data-text="Section 20"><div class="circle"></div></li>
+            <li data-text="Section 21"><div class="circle"></div></li>
+            <li data-text="Section 22"><div class="circle"></div></li>
+            <li data-text="Section 23"><div class="circle"></div></li>
+            <li data-text="Section 24"><div class="circle"></div></li>
+            <li data-text="Section 25"><div class="circle"></div></li>
+            <li data-text="Section 26"><div class="circle"></div></li>
+            <li data-text="Section 27"><div class="circle"></div></li>
           </ul>
         </div>
       </div>
@@ -668,10 +675,9 @@
             $(".rslides").responsiveSlides({ speed: 600, timeout: 3000 });
           });
           function c4qHightNavCircle(verticalIndex) {
-            var items = Array.prototype.slice.call(document.querySelectorAll('.nav-panel ul li'));
-            items.forEach(function(i) { i.className = ''; });
-            items[verticalIndex].className = 'active';
-            //$('.nav-panel ul').children[verticalIndex];
+            var items = $('.nav-panel ul li');
+            items.each(function() { $(this).removeClass('active'); });
+            $(items[verticalIndex]).addClass('active');
           }
           Reveal.addEventListener('slidechanged', function(e) {
             c4qHightNavCircle(e.indexv);
@@ -681,16 +687,13 @@
           });
 
           $('.nav-panel li').mouseover(function(e) {
-            console.log('HEREHRHE');
             var li = $(this);
             var tooltip = $('.tooltip-wrapper .tooltip');
-            tooltip.text(li.data().text);
             var pos = li.position();
             var arrow = $('.tooltip-wrapper .left-arrow');
             var top = pos.top - 2;
-            tooltip.css({top: top,
-                        left: 31,
-                        opacity: 1});
+            tooltip.text(li.data().text);
+            tooltip.css({top: top, left: 31, opacity: 1});
             arrow.css({top: top + 8, left: 25, opacity: 1});
           });
         </script>
