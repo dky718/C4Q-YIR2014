@@ -2908,13 +2908,21 @@ var Reveal = (function(){
 
 	}
 
+    function nodeIsInVerticalNav(node) {
+      while (node != document.body) {
+        if (node.className === "nav-panel") { return true; }
+        node = node.parentNode;
+      }
+      return false;
+    }
+
 	/**
 	 * Handles mouse wheel scrolling, throttled to avoid skipping
 	 * multiple slides.
 	 */
 	function onDocumentMouseScroll( event ) {
-
 		if( Date.now() - lastMouseWheelStep > 1200 ) {
+            if (nodeIsInVerticalNav(event.target)) { return; }
 			lastMouseWheelStep = Date.now();
 			var delta = event.detail || -event.wheelDelta;
 			if( delta > 0 ) {
