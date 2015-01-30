@@ -124,35 +124,30 @@ ul.plus{
 	.plus li>p{
 		padding-left: 1.7em;
 	}
-
+ul#boardnews{
+	padding-left: 1em;
+}
 #qtmlogos img{
 	max-width: 140px;
-	max-height: 60px;
-	padding: 12px;
+	max-height: 65px;
+	padding: 10px;
 }
-<<<<<<< HEAD
 
-#volunteercommittee p, 
-=======
-#volunteercommittee p,
->>>>>>> origin/vertical-nav-2
-#volunteercommittee h3{
-}
 	#volunteercommittee img{
 		margin-bottom: 5px;
-	}
-	#volunteercommittee hr.title{
-		background-color:#ffffff;
 	}
 	.committeehr{
 		width: 10%;
 		height: 1px;
-		color:#000;
-		background-color:#ffffff;
+		color: black;
+		background-color: black;
 		border: none;
 		margin-bottom: 10px;
 	}
 
+img.support_logo{
+	margin: 20px;
+}
 .graph-bar{
 	height: 12px;
 	display: table-cell;
@@ -189,7 +184,7 @@ div.ourworkimage{
 div.ourworkoutline{
 	border: 6px solid #ffffff;
 	padding: 40px;
-	width: 420px;
+	max-width: 400px;
 	float: left;
 	color: #ffffff;
 	margin: 30px;
@@ -207,7 +202,7 @@ div.ourworkimage{
 	float: left;
 }
 div.ourworkimage p{
-	padding: 20px 40px;
+	padding: 20px 30px;
 }
 div.ourworkimage>img{
 }
@@ -256,8 +251,9 @@ div.ourworklogo{
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
   img.imagetest{
-<<<<<<< HEAD
+    FOR DAVE:
   	height: 160px;
+  	height: 140px;
   }
 
   .ui-tooltip {
@@ -269,9 +265,6 @@ div.ourworklogo{
 	z-index: 9999;
 	max-width: 160px;
   }
-=======
-  	height: 140px;
-  }
 
 /*********************************************
  * VERTICAL NAV                              *
@@ -281,6 +274,9 @@ div.ourworklogo{
   width: 32px;
   position: absolute;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .tooltip-wrapper {
   overflow: visible;
@@ -290,17 +286,15 @@ div.ourworklogo{
   display: none;
 }
 .nav-panel {
-  position: absolute;
   overflow-y: auto;
-  width: 44px;
-  top: 0;
-  left: 0;
+  width: 60px;
   z-index: 30;
   display: block;
   max-height: 100%;
   padding: 10px 0;
-  background-color: rgba(0,0,0,.4);
+  /* background-color: rgba(0,0,0,.2); */
   color: #F9F9F9; /*subtle white*/
+  margin-left: -13px;
 }
 .nav-panel ul {
   padding: 0;
@@ -310,7 +304,7 @@ div.ourworklogo{
 }
 .nav-panel li {
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 8px 10px;
   position: relative;
 }
 .tooltip-wrapper .left-arrow {
@@ -319,7 +313,7 @@ div.ourworklogo{
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-right:6px solid #3676e8;
+  border-right:6px solid #3CB54A;
   position: absolute;
   left: 26px;
   top: 5px;
@@ -329,17 +323,17 @@ div.ourworklogo{
 .tooltip-wrapper .tooltip {
   z-index: 999;
   opacity: 0;
-  background-color: #3676e8;
+  background-color: #3CB54A;
   padding: 5px;
   position: absolute;
-  min-width: 100px;
+  min-width: 200px;
   text-align: center;
   left: 32px;
   top: -3px;
   transition: opacity 0.2s;
   color: #F9F9F9; /*subtle white*/
 }
-.tooltip-wrapper :hover .tooltip {
+.tooltip-wrapper:hover .tooltip {
   transition: opacity 0.5s;
 }
 .tooltip-wrapper:hover .left-arrow {
@@ -348,21 +342,41 @@ div.ourworklogo{
 .nav-panel .circle {
   position: relative;
   overflow: hidden;
-  width: 10px;
-  height: 10px;
-  border: 1px solid #fff;
+  width: 6px;
+  height: 6px;
+  margin: 0 auto;
+  background-color: #B8B8B8;
   border-radius: 50%;
   transition: border-color, transform 0.3s;
   will-change: border-color, transform;
 }
-.nav-panel ul li:active .circle, .nav-panel .circle:active {
-  background: rgba(255,255,255,0.4);
-}
 .nav-panel li:hover .circle, .nav-panel .active .circle {
-  border-color: rgba(255,255,255,0.8);
-  background: rgba(255,255,255,0.8);
+  background-color:#3CB54A;
+  background-color:#3CB54A;
+  transform: scale(2);
 }
-.nav-panel li:hover .circle{
-  transform: scale(1.4);
+
+/*********************************************
+ * MEDIA QUERY
+ *********************************************/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+	.nav-panel{
+		visibility: hidden;
+	}
+	#intrologo{
+		width: 75%;
+	}
+	#arrowdown{
+		width: 80px;
+		position: relative;
+	    bottom: -100px;
+	}
+	.reveal h1 { font-size: 3.77em; }
+	.reveal h2 { font-size: 4em;	}
+	.reveal h3 { font-size: 1.55em;	}
+	.reveal h4 { font-size: 1em;	}
+	.reveal p  { font-size: 2em;    }
 }
->>>>>>> origin/vertical-nav-2
