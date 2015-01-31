@@ -789,7 +789,7 @@ floating
 		transform: translateY(0%);	
 	}
 	50% {
-		transform: translateY(8%);	
+		transform: translateY(50%);	
 	}	
 	100% {
 		transform: translateY(0%);
@@ -801,7 +801,7 @@ floating
 		-webkit-transform: translateY(0%);	
 	}
 	50% {
-		-webkit-transform: translateY(8%);	
+		-webkit-transform: translateY(50%);	
 	}	
 	100% {
 		-webkit-transform: translateY(0%);
@@ -1066,15 +1066,16 @@ stretchRight
 	animation-name: stretchRight;
 	-webkit-animation-name: stretchRight;	
 
-	animation-duration: 1.5s;	
-	-webkit-animation-duration: 1.5s;
+
+	animation-duration: 2.5s;	
+	-webkit-animation-duration: 2.5s;
 
 	animation-timing-function: ease-out;	
 	-webkit-animation-timing-function: ease-out;	
 
 	transform-origin: 0% 0%;
 	-ms-transform-origin: 0% 0%;
-	-webkit-transform-origin: 0% 0%; 		
+	-webkit-transform-origin: 0% 0%;	
 }
 
 @keyframes stretchRight {

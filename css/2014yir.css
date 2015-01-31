@@ -149,13 +149,13 @@ img.support_logo{
 	margin: 20px;
 }
 .graph-bar{
-	height: 12px;
+	height: 30px;
 	display: table-cell;
 }
 	.bar-2013{
 		width: 60px;
 		display: inline-block;
-		background-color: #6EC829;
+		background-color: #ffffff;
 	}
 	.bar-2014{
 		width: 250px;
@@ -187,14 +187,12 @@ div.ourworkoutline{
 	max-width: 400px;
 	float: left;
 	color: #ffffff;
-	margin: 30px;
 }
 div.ourworksolid{
 	background-color: #ffffff;
 	padding: 20px 20px 0 20px;
 	width: auto;
 	float: left;
-	margin: 20px;
 }
 div.ourworkimage{
 	background-color: #ffffff;
