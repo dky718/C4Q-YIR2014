@@ -174,19 +174,16 @@ p.ourworktitle{
 	font-size: .8em;
 	letter-spacing: 2px;
 }
-div.ourworkoutline,
-div.ourworksolid,
-div.ourworkimage{
-	/* -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
-	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75); */
-}
 div.ourworkoutline{
 	border: 6px solid #ffffff;
 	padding: 40px;
 	max-width: 400px;
 	float: left;
 	color: #ffffff;
+}
+div.ourworkoutline:hover{
+	border: 6px solid #3CB54A;
+	transition: border-color .5s ease-in-out;  
 }
 div.ourworksolid{
 	background-color: #ffffff;
@@ -202,13 +199,38 @@ div.ourworkimage{
 div.ourworkimage p{
 	padding: 20px 30px;
 }
-div.ourworkimage>img{
-}
 div.ourworklogo{
 	width: 280px;
 }
 .queenstechcomp{
 
+}
+#policyslides img{
+	max-width: 320px;
+}
+#polnad{
+	float: right;
+	margin-top: 150px;
+}
+#polnaddesc{
+	margin-top: 45px;
+}
+#polnaddesc2{
+	margin-top: 45px;
+}
+#polnadimg{
+}
+#c4qedu{
+	margin-top: 40px;
+	float: right;
+	width: 240px;
+}
+#c4qedudesc{
+	position: relative;
+	margin-top: 80px;
+}
+#c4qeduimg{
+	margin-top: 45px;
 }
 /*********************************************
  * CHAPTER SLIDES
