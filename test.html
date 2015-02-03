@@ -1,0 +1,94 @@
+<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <style>
+    html, body { height: 100%; }
+    body { background: radial-gradient(circle, lightslategray 45%,
+                                               slategray 60%);
+                                             }
+    text {
+      font-family: sans-serif;
+      font-size: 12px;
+      fill: gainsboro;
+    }
+  </style>
+</head>
+<body>
+  <h1>Here</h1>
+  <script>
+    //(function() {
+
+    var dataset = [46,19,35];
+    var highlightData = [{value: 65, off: false},{value: 35, off: true}];
+
+    var color = d3.scale.category10();
+    var pie = d3.layout.pie().sort(null);
+    var w = 300;
+    var h = 300;
+    var padding = 20;
+    var outerRadius = (w / 2) - padding * 2;
+    var yOffset = outerRadius + padding;
+    var innerRadius = 0;
+    var arc= d3.svg.arc()
+      .innerRadius(innerRadius)
+      .outerRadius(outerRadius);
+    var hoverArc = d3.svg.arc()
+      .innerRadius(innerRadius + 100)
+      .outerRadius(outerRadius + 150);
+
+    var svg = d3.select('body').append('svg').attr('width', w).attr('height', h);
+
+    var arcs = svg.selectAll('g.arc')
+            .data(pie(dataset))
+          .enter()
+            .append('g').attr('class', 'arc')
+            .attr('transform', 'translate('+outerRadius+','+yOffset+')');
+
+    arcs.append('path')
+        .attr('fill', function(d,i) { return color(i); })
+        .attr('d', arc);
+
+    arcs.on('mouseenter', function(d,i) {
+      d3.select(this)
+        .transition().duration(200)
+        .ease('circle')
+        .attr('transform', function(d) {
+          var dist = 20;
+          d.midAngle = ((d.endAngle - d.startAngle) / 2) + d.startAngle;
+          var x = (Math.sin(d.midAngle) * dist) + outerRadius;
+          var y = ((-Math.cos(d.midAngle)) * dist) + yOffset;
+          return 'translate('+ x + ','+ y +')';
+        });
+    });
+    arcs.on('mouseleave', function(d,i) {
+      d3.select(this).transition().duration(200)
+        .ease('circle')
+        .attr('transform', 'translate('+outerRadius+','+yOffset+')');
+    });
+
+    arcs.append('text')
+    .attr('transform', function(d) {
+      return 'translate('+arc.centroid(d)+')'; })
+    .attr('text-anchor', 'middle')
+    .text(function(d){ return d.value; });
+
+    pie.value(function(d) {return d.value;});
+    var highlightArcs = svg.selectAll('g.highlight')
+        .data(pie(highlightData))
+      .enter()
+        .append('g').attr('class', 'highlight')
+        .attr('transform', 'translate('+outerRadius+','+yOffset+')');
+
+    highlightArcs.append('path')
+    .attr('stroke', function(d) {
+      return d.data.off ? 'none' : 'black';
+      })
+        .attr('fill', 'none')
+        .attr('stroke-linecap', 'round')
+        .attr('d', arc);
+
+
+//    }());
+
+  </script>
+</body>
