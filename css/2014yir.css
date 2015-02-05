@@ -166,7 +166,9 @@ img.support_logo{
 #c4qtechbash p{
 	color: #ffffff;
 }
-
+#techbashlogo{
+	width: 200px;
+}
 p.ourworktitle{
 	font-family: 'Helvetica', serif;
 	font-weight: bold;
@@ -178,12 +180,8 @@ div.ourworkoutline{
 	border: 6px solid #ffffff;
 	padding: 40px;
 	max-width: 400px;
-	float: left;
 	color: #ffffff;
-}
-div.ourworkoutline:hover{
-	border: 6px solid #3CB54A;
-	transition: border-color .5s ease-in-out;  
+	float: left;
 }
 div.ourworksolid{
 	background-color: #ffffff;
