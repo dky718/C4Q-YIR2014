@@ -127,6 +127,9 @@ ul.plus{
 ul#boardnews{
 	padding-left: 1em;
 }
+#qtmlogos{
+	padding: 20px;
+}
 #qtmlogos img{
 	max-width: 140px;
 	max-height: 65px;
@@ -167,7 +170,14 @@ img.support_logo{
 	color: #ffffff;
 }
 #techbashlogo{
-	width: 200px;
+	width: 240px;
+	float: right;
+}
+#bashslide2{
+	top: 80px;
+}
+#bashslide1{
+	float: left;
 }
 p.ourworktitle{
 	font-family: 'Helvetica', serif;
@@ -220,12 +230,10 @@ div.ourworklogo{
 }
 #c4qedu{
 	margin-top: 40px;
-	float: right;
 	width: 240px;
 }
 #c4qedudesc{
 	position: relative;
-	margin-top: 80px;
 }
 #c4qeduimg{
 	margin-top: 45px;
