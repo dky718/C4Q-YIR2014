@@ -31,7 +31,8 @@
   display: block;
   height: auto;
   float: left;
-  width: 520px;
+  vertical-align: top;
+  width: 320px;
   border: 0;
   }
 .centered-btns_nav {

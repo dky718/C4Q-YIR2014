@@ -242,7 +242,6 @@ body {
 /** Prevents layering issues in certain browser/transition combinations */
 .reveal a {
 	position: relative;
-	color: #004799;
 }
 
 .reveal strong,
