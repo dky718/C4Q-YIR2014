@@ -1,5 +1,5 @@
 (function() {
-  var arc, arcTween, arcs, byId, color, currentSlice, endDataset, h, highlightArcs, highlightData, hoverArc, innerRadius, linScale, numSteps, outerRadius, padding, paths, pie, previousTime, startDataset, stepFn, steps, svg, toRad, valOne, valTwo, w, yOffset;
+  var arc, arcTween, arcs, byId, color, currentSlice, endDataset, h, highlightArcs, highlightData, hoverArc, innerRadius, numSteps, outerRadius, padding, paths, pie, previousTime, startDataset, stepFn, steps, svg, timeToProgressScale, toRad, valOne, valTwo, w, yOffset;
 
   toRad = function(perc) {
     return (perc / 100) * Math.PI * 2;
@@ -37,29 +37,28 @@
 
   valTwo = toRad(46 + 19);
 
-  console.log("valOne: " + valOne);
-
-  console.log("valTwo: " + valTwo);
-
   endDataset = [
     {
       id: 0,
       v: toRad(46),
       off: false,
       startAngle: 0,
-      endAngle: valOne
+      endAngle: valOne,
+      scale: d3.scale.linear().domain([0, 1]).range([0, valOne])
     }, {
       id: 1,
       v: toRad(19),
       off: false,
       startAngle: valOne,
-      endAngle: toRad(46 + 19)
+      endAngle: toRad(46 + 19),
+      scale: d3.scale.linear().domain([0, 1]).range([valOne, toRad(46 + 19)])
     }, {
       id: 2,
       v: toRad(35),
       off: false,
       startAngle: toRad(46 + 19),
-      endAngle: Math.PI * 2
+      endAngle: Math.PI * 2,
+      scale: d3.scale.linear().domain([0, 1]).range([toRad(46 + 19), Math.PI * 2])
     }
   ];
 
@@ -106,9 +105,9 @@
     };
   };
 
-  numSteps = 100;
+  numSteps = 50;
 
-  linScale = d3.scale.linear().domain([0, numSteps]).range([0, 1]);
+  timeToProgressScale = d3.scale.linear().domain([0, numSteps]).range([0, 1]);
 
   arcs = svg.selectAll('g.arc').data(startDataset).enter().append('g').attr('class', 'arc').attr('transform', "translate(" + outerRadius + "," + yOffset + ")");
 
@@ -123,17 +122,15 @@
   currentSlice = 0;
 
   stepFn = function(time) {
-    var scaledVal;
     if (steps > numSteps) {
-      if (currentSlice === 2) {
+      if (currentSlice === (endDataset.length - 1)) {
         return true;
       }
       currentSlice += 1;
       steps = 0;
     }
-    scaledVal = linScale(steps);
     paths.attr('d', function(d) {
-      var newVal, scaledD, v;
+      var newVal, progress, scaledAngle, scaledD, v;
       scaledD = byId(endDataset, d.id);
       if (d.id < currentSlice) {
         return arc(scaledD);
@@ -147,15 +144,15 @@
         startAngle: scaledD.startAngle,
         endAngle: scaledD.endAngle
       };
-      newVal.endAngle = scaledVal * scaledD.endAngle;
+      progress = timeToProgressScale(steps);
+      scaledAngle = scaledD.scale(progress);
+      newVal.endAngle = scaledAngle;
       if (newVal.endAngle < newVal.startAngle) {
         return;
       }
-      console.log("new EndAngle: " + newVal.endAngle + ", for id: " + d.id);
       v = arc(newVal);
       return v;
     });
-    console.log('scaled val: ', scaledVal);
     previousTime = time;
     steps += 1;
     return false;
