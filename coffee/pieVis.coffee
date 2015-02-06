@@ -3,15 +3,13 @@ byId = (data, id) -> (data.filter (i) -> i.id is id)[0]
 startDataset  = [{id:0, v:toRad(46), off:false, startAngle: 0, endAngle: 0},
                  {id:1, v:toRad(19), off:false, startAngle: toRad(46), endAngle: toRad(46)},
                  {id:2, v:toRad(35), off:false, startAngle: toRad(46+19), endAngle: toRad(46+19)}]
-                 #{v:toRad(19), off:false, startAngle: 0, endAngle: toRad(46)},
-                 #{v:toRad(35), off:false, startAngle: 0, endAngle: toRad(46+19)}]
+
 valOne = toRad(46)
 valTwo = toRad(46+19)
-console.log("valOne: #{valOne}")
-console.log("valTwo: #{valTwo}")
-endDataset       = [{id:0, v:toRad(46), off:false, startAngle: 0, endAngle: valOne},
-                 {id:1, v:toRad(19), off:false, startAngle: valOne, endAngle: toRad(46+19)},
-                 {id:2, v:toRad(35), off:false, startAngle: toRad(46+19), endAngle: Math.PI*2}]
+
+endDataset    = [{id:0, v:toRad(46), off:false, startAngle:0, endAngle:valOne,scale: d3.scale.linear().domain([0,1]).range([0, valOne]) },
+                 {id:1, v:toRad(19), off:false, startAngle: valOne, endAngle: toRad(46+19), scale: d3.scale.linear().domain([0,1]).range([valOne, toRad(46+19)]) },
+                 {id:2, v:toRad(35), off:false, startAngle: toRad(46+19), endAngle: Math.PI*2, scale: d3.scale.linear().domain([0,1]).range([toRad(46+19), Math.PI*2]) }]
 highlightData = [ { value: 65, off: false }, { value: 35, off: true } ]
 color         = d3.scale.category10()
 pie           = d3.layout.pie().sort(null).value (d) -> d.v
@@ -29,52 +27,57 @@ arcTween = (a) ->
   @_current = i(0)
   (t) -> arc i(t)
 
-numSteps = 100
-linScale = d3.scale.linear().domain([0,numSteps]).range([0,1])
+numSteps = 50
+timeToProgressScale = d3.scale.linear().domain([0,numSteps]).range([0,1])
 
 
 arcs = svg.selectAll('g.arc')
     .data startDataset
-    #.data dataset
   .enter()
     .append 'g'
     .attr 'class', 'arc'
     .attr 'transform', "translate(#{outerRadius},#{yOffset})"
 
-paths = arcs.append('path')
-    .attr 'fill', (d,i) -> color i
-    #.attr 'd', (d) -> arc(d)
+paths = arcs.append('path').attr 'fill', (d,i) -> color i
 
 previousTime = 0
 steps = 0
 currentSlice = 0
+
+
+
+
 stepFn = (time) ->
   if steps > numSteps
-    if currentSlice is 2
+    if currentSlice is (endDataset.length - 1)
       return true
     currentSlice += 1
     steps = 0
 
-  scaledVal = linScale(steps)
   paths.attr 'd', (d) ->
     scaledD = byId(endDataset, d.id)
     if d.id < currentSlice
+      # Slices that already completing animating.
       return arc(scaledD)
+    # Skip future slices.
     return if d.id > currentSlice
+
+    # Copy vals as to not mutate them.
     newVal =
       id: scaledD.id
       v: scaledD.v
       startAngle: scaledD.startAngle
       endAngle: scaledD.endAngle
 
-    newVal.endAngle = scaledVal * scaledD.endAngle
+    progress = timeToProgressScale(steps)
+    scaledAngle = scaledD.scale(progress)
+    newVal.endAngle = scaledAngle
     return if newVal.endAngle < newVal.startAngle
-    console.log("new EndAngle: #{newVal.endAngle}, for id: #{d.id}")
     v = arc(newVal)
     #console.log "new v is: #{v}"
     v
 
-  console.log('scaled val: ', scaledVal)
+  #console.log('progress: ', progress)
   previousTime = time
   steps += 1
   false
