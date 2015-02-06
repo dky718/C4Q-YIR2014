@@ -71,7 +71,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'js/pieVis.js': 'coffee/pieVis.coffee'
+          'js/pieVis2.js': 'coffee/pieVis2.coffee'
         }
       }
 
