@@ -238,6 +238,36 @@ div.ourworklogo{
 #c4qeduimg{
 	margin-top: 45px;
 }
+input{
+	padding: 20px;
+	font-size: 14px;
+	background: rgba(255,255,255,.2);
+	border: 1px solid rgba(255,255,255,.23);
+	color: #000000;
+}
+input:focus{
+	outline-color: transparent;
+  	outline-style: none;
+	background: rgba(255,255,255,.5);
+}
+::-webkit-input-placeholder {
+   color: #ffffff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #ffffff;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ffffff;  
+}
+
+:-ms-input-placeholder {  
+   color: #ffffff;  
+}
+#mce-responses{
+	margin: 20px 0;
+}
 /*********************************************
  * CHAPTER SLIDES
  *********************************************/
