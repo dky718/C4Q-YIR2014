@@ -195,6 +195,7 @@ div.ourworkoutline{
 	max-width: 400px;
 	color: #ffffff;
 	float: left;
+	margin: 20px;
 }
 div.ourworksolid{
 	background-color: #ffffff;
@@ -206,12 +207,27 @@ div.ourworkimage{
 	background-color: #ffffff;
 	border: 6px solid #ffffff;
 	float: left;
+	margin: 20px;
 }
 div.ourworkimage p{
 	padding: 20px 30px;
 }
 div.ourworklogo{
 	width: 280px;
+}
+#smithsonian .ourworkoutline,
+#smithsonian .ourworkimage{
+	
+}
+#summitpartners{
+	width: 600px;
+}
+#summitpartners>img{
+	max-width: 125px;
+	max-height: 35px;
+	float: left;
+	vertical-align: middle;
+	margin-right: 30px;
 }
 .queenstechcomp{
 
@@ -236,7 +252,7 @@ div.ourworklogo{
 	width: 240px;
 }
 #c4qedudesc{
-	position: relative;
+	float: left;
 }
 #c4qeduimg{
 	margin-top: 45px;
