@@ -165,20 +165,23 @@ img.support_logo{
 		display: inline-block;
 		background-color: #6EC829;
 	}
-
-#c4qtechbash p{
-	color: #ffffff;
+#c4qtechbash{
 }
-#techbashlogo{
-	width: 240px;
-	float: right;
-}
-#bashslide2{
-	top: 80px;
-}
-#bashslide1{
-	float: left;
-}
+	#c4qtechbash p{
+		color: #ffffff;
+	}
+	#techbashlogo{
+		width: 320px;
+		padding: 20px;
+		float: left;
+	}
+	#bashslide2{
+		margin-top: 60px;
+	}
+	#bashslide1{
+		float: right;
+		width: 80%;
+	}
 p.ourworktitle{
 	font-family: 'Helvetica', serif;
 	font-weight: bold;
@@ -267,6 +270,16 @@ input:focus{
 }
 #mce-responses{
 	margin: 20px 0;
+}
+/*********************************************
+ * Access Code 2.0 Animation
+ *********************************************/
+.box {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: steelblue;
+      opacity: 0;
 }
 /*********************************************
  * CHAPTER SLIDES
