@@ -616,7 +616,7 @@
 							<p class="toptitle">Access Code 2.0</p>
 							<hr class="title">
 							<h3>We want to create new pathways that expand and strength the tech ecosystem. This will help the tech industry grow and increase income mobility for more New Yorkers.</h3>
-							<img src="img/whoweserve.svg">
+                            <div id="pie-chart"></div>
 						</div>
 						<p>Our Access Code 2.0 cohort:</p>
 						<ul>
@@ -740,6 +740,8 @@
 		<script src="js/tipped.js"></script>
 		<script src="js/responsiveslides.js"></script>
 		<script src="js/jquery-ui.js"></script>
+        <script src="js/d3.min.js"></script>
+        <script src="js/pieVis.js"></script>
 		<script>
   			$(function() {
     		$("#bashslide1").responsiveSlides({
@@ -781,10 +783,10 @@
             $(slideEvent.currentSlide).find('.toStretchRight').addClass('stretchRight');
           }
           function animatePieChart(slideEvent) {
-            if (slideEvent.indexv === 22) {
+            if (slideEvent.indexv === 23) {
               console.log('slideEvent: ', slideEvent);
               console.info(slideEvent);
-              setTimeout(animatePie(), 1000);
+              setTimeout(animatePie, 1500);
             }
           }
           Reveal.addEventListener('slidechanged', function(e) {
@@ -823,7 +825,5 @@
            if (index > -1) { Reveal.slide(0, index); }
           });
         </script>
-        <script src="js/d3.min.js"></script>
-        <script src="js/pieVis.js"></script>
 	</body>
 </html>
