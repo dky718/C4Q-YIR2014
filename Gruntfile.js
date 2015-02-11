@@ -50,13 +50,7 @@ module.exports = function(grunt) {
       },
       gruntfile: {
         src: 'Gruntfile.js'
-      },
-      lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
       }
-    },
-    qunit: {
-      files: ['test/**/*.html']
     },
     watch: {
       gruntfile: {
@@ -71,7 +65,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'js/pieVis2.js': 'coffee/pieVis2.coffee'
+          'js/pieVis.js': 'coffee/pieVis.coffee'
         }
       }
 

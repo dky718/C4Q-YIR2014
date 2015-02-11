@@ -73,7 +73,6 @@
         </div>
       </div>
 
-
 		<div class="reveal">
 			<div class="slides">
 				<section>
@@ -174,14 +173,14 @@
 									<li><img src="img/techbashpeeps3.jpg"></li>
 								</ul>
 							</div>
-							
+
 							<div style="float: left; width: 70%">
 								<div class="bashoutline">
 									<img src="img/bash.gif" style="float: left; width: 100%; margin-bottom: 1%">
 								</div>
 
 								<iframe width="310" height="310" src="https://sketchfab.com/models/810942f8889f457c9d3109e6ce61952e/embed?autospin=0.2&amp;autostart=0" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="" style="float: left;" class="bashoutline"></iframe>
-								
+
 								<div id="techbashlogo">
 									<img src="img/techbashlogo.svg">
 									<br/>
@@ -189,11 +188,10 @@
 									<br/>
 									<a href="http://www.c4q.nyc" class="button">Learn More</a>
 								</div>
-								
+
 							</div>
 
 						</div>
-						
 					</section>
 
 					<!-- QTM EVENTS -->
@@ -319,7 +317,7 @@
 							<div id="polnaddesc" class="ourworkoutline center">
 								<p>The Queens Tech Strategic Plan is a community-based initiative that will lay the foundations for the continued long-term growth of tech in Queens. We hosted three Public Sessions in 2014 on themes related to the tech ecosystem to better understand the different needs of the community, business, and residents.</p>
 							</div>
-							
+
 						</div>
 						<div>
 							<div id="polnadimg" class="ourworkimage">
@@ -330,7 +328,6 @@
 								</ul>
 								<p class="center">Public Sessions</p>
 							</div>
-							
 
 						</div>
 					</section>
@@ -386,7 +383,6 @@
 					</section>
 
 					<section data-background="img/accesscodedemo3.jpg">
-						
 						<div class="ourworkoutline">
 							<p>Access Code Graduate</p>
 							<div class="graph-bar bar-2013 toStretchRight"></div><br/>
@@ -417,7 +413,7 @@
 						<br/>
 						<p>We're growing an interisciplinary team of talented individials joined by our shared passion for increasing economic opportunity for <em>all</em> New Yorkers. Not only do our new teammates add a breadth of skillsets to our toolbox, they bring great energy and enthusiasm to our work.</p>
 						</br/>
-						
+
 						<div class="center">
 							<em>Backgrounds & Skillsets</em></br/>
 							<img src="img/teambackskills.gif">
@@ -445,7 +441,7 @@
 							<p class="subtitle">Photo credit: @mteatran</p>
 						</div>
 					</section>
-					-->	
+					-->
 
 					<section data-background="img/grey.png" data-background-size="300px" data-background-repeat="repeat">
 						<div class="container">
@@ -684,9 +680,9 @@
 
 						<div id="mc_embed_signup" class="center">
 							<form action="//nyc.us2.list-manage.com/subscribe/post?u=fc350b124f578d71b6cda0beb&amp;id=aa60ddf156" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-							
+
 							<div id="mc_embed_signup_scroll">
-								
+
 								<div class="mc-field-group">
 									<input type="text" value="" placeholder="First" name="FNAME" class="required" id="mce-FNAME">
 									<input type="text" value="" placeholder="Last" name="LNAME" class="required" id="mce-LNAME">
@@ -782,13 +778,22 @@
             $(slideEvent.currentSlide).find('.toHatch').addClass('hatch');
             $(slideEvent.currentSlide).find('.toStretchRight').addClass('stretchRight');
           }
+          function animatePieChart(slideEvent) {
+            if (slideEvent.indexv === 22) {
+              console.log('slideEvent: ', slideEvent);
+              console.info(slideEvent);
+              setTimeout(animatePie(), 1000);
+            }
+          }
           Reveal.addEventListener('slidechanged', function(e) {
             c4qHightNavCircle(e.indexv);
             c4qSetAnimations(e);
+            animatePieChart(e);
           });
           Reveal.addEventListener('ready', function(e) {
             c4qHightNavCircle(e.indexv);
             c4qSetAnimations(e);
+            animatePieChart(e);
           });
 
           $('.nav-panel li').mouseover(function() {
@@ -816,8 +821,7 @@
            if (index > -1) { Reveal.slide(0, index); }
           });
         </script>
-
-
-  		<script src="js/pieVis2.js"></script>
+        <script src="js/d3.min.js"></script>
+        <script src="js/pieVis.js"></script>
 	</body>
 </html>
