@@ -1,82 +1,31 @@
 (function() {
-  var arc, arcTween, arcs, byId, color, currentSlice, endDataset, h, highlightArcs, highlightData, hoverArc, innerRadius, numSteps, outerRadius, padding, paths, pie, previousTime, startDataset, stepFn, steps, svg, timeToProgressScale, toRad, valOne, valTwo, w, yOffset;
+  var alreadyAnimated, arc, arcs, color, currentSlice, dataSet, h, highlightData, hoverArc, innerRadius, interpolator, outerRadius, padding, svg, toRad, w, xOffset, yOffset;
 
   toRad = function(perc) {
     return (perc / 100) * Math.PI * 2;
   };
 
-  byId = function(data, id) {
-    return (data.filter(function(i) {
-      return i.id === id;
-    }))[0];
-  };
-
-  startDataset = [
+  dataSet = [
     {
-      id: 0,
-      v: toRad(46),
-      off: false,
-      startAngle: 0,
-      endAngle: 0
-    }, {
-      id: 1,
-      v: toRad(19),
-      off: false,
-      startAngle: toRad(46),
+      startAngle: toRad(0),
       endAngle: toRad(46)
     }, {
-      id: 2,
-      v: toRad(35),
-      off: false,
-      startAngle: toRad(46 + 19),
+      startAngle: toRad(46),
       endAngle: toRad(46 + 19)
-    }
-  ];
-
-  valOne = toRad(46);
-
-  valTwo = toRad(46 + 19);
-
-  endDataset = [
-    {
-      id: 0,
-      v: toRad(46),
-      off: false,
-      startAngle: 0,
-      endAngle: valOne,
-      scale: d3.scale.linear().domain([0, 1]).range([0, valOne])
     }, {
-      id: 1,
-      v: toRad(19),
-      off: false,
-      startAngle: valOne,
-      endAngle: toRad(46 + 19),
-      scale: d3.scale.linear().domain([0, 1]).range([valOne, toRad(46 + 19)])
-    }, {
-      id: 2,
-      v: toRad(35),
-      off: false,
       startAngle: toRad(46 + 19),
-      endAngle: Math.PI * 2,
-      scale: d3.scale.linear().domain([0, 1]).range([toRad(46 + 19), Math.PI * 2])
+      endAngle: Math.PI * 2
     }
   ];
 
   highlightData = [
     {
-      value: 65,
-      off: false
-    }, {
-      value: 35,
-      off: true
+      startAngle: toRad(0),
+      endAngle: toRad(46 + 19)
     }
   ];
 
-  color = d3.scale.category10();
-
-  pie = d3.layout.pie().sort(null).value(function(d) {
-    return d.v;
-  });
+  color = d3.scale.ordinal().domain([0, 1, 2]).range(['#929497', '#bbbdbf', '#e6e7e8']);
 
   w = 300;
 
@@ -90,152 +39,88 @@
 
   yOffset = outerRadius + padding;
 
+  xOffset = outerRadius + padding * 2;
+
   arc = d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius);
 
   hoverArc = d3.svg.arc().innerRadius(innerRadius + 100).outerRadius(outerRadius + 150);
 
-  svg = d3.select('body').append('svg').attr('width', w).attr('height', h);
+  svg = d3.select('#pie-chart').append('svg').attr('width', w).attr('height', h);
 
-  arcTween = function(a) {
-    var i;
-    i = d3.interpolate(this._current, a);
-    this._current = i(0);
-    return function(t) {
-      return arc(i(t));
-    };
-  };
-
-  numSteps = 50;
-
-  timeToProgressScale = d3.scale.linear().domain([0, numSteps]).range([0, 1]);
-
-  arcs = svg.selectAll('g.arc').data(startDataset).enter().append('g').attr('class', 'arc').attr('transform', "translate(" + outerRadius + "," + yOffset + ")");
-
-  paths = arcs.append('path').attr('fill', function(d, i) {
-    return color(i);
-  });
-
-  previousTime = 0;
-
-  steps = 0;
+  arcs = svg.selectAll('g.arc').data(dataSet).enter().append('g').attr('class', 'arc').attr('transform', "translate(" + xOffset + "," + yOffset + ")");
 
   currentSlice = 0;
 
-  stepFn = function(time) {
-    if (steps > numSteps) {
-      if (currentSlice === (endDataset.length - 1)) {
-        return true;
+  interpolator = function(d, i) {
+    var int;
+    int = d3.interpolate(d.startAngle, d.endAngle);
+    return function(t) {
+      if (currentSlice === i) {
+        d.endAngle = int(t);
+        return arc(d);
+      } else if (currentSlice > i) {
+        return arc(dataSet[i]);
+      } else {
+        return "";
       }
-      currentSlice += 1;
-      steps = 0;
-    }
-    paths.attr('d', function(d) {
-      var newVal, progress, scaledAngle, scaledD, v;
-      scaledD = byId(endDataset, d.id);
-      if (d.id < currentSlice) {
-        return arc(scaledD);
-      }
-      if (d.id > currentSlice) {
-        return;
-      }
-      newVal = {
-        id: scaledD.id,
-        v: scaledD.v,
-        startAngle: scaledD.startAngle,
-        endAngle: scaledD.endAngle
-      };
-      progress = timeToProgressScale(steps);
-      scaledAngle = scaledD.scale(progress);
-      newVal.endAngle = scaledAngle;
-      if (newVal.endAngle < newVal.startAngle) {
-        return;
-      }
-      v = arc(newVal);
-      return v;
-    });
-    previousTime = time;
-    steps += 1;
-    return false;
+    };
   };
 
-  d3.timer(stepFn, 1000);
+  alreadyAnimated = false;
 
-  return;
-
-  paths = arcs.append('path').attr('fill', function(d, i) {
-    return color(i);
-  }).attr('d', function(d) {
-    return arc(toRad(d));
-  }).style('opacity', function(d) {
-    if (d.off) {
-      return 0;
-    } else {
-      return 1;
+  window.c4qD3AnimatePie = function() {
+    var fn;
+    fn = function() {
+      var paths, t1, t10, t11, t2, t3, t4, t5, t6, t7, t8, t9;
+      paths = arcs.append('path').attr('fill', function(d, i) {
+        return color(i);
+      });
+      t1 = paths.transition().duration(750).attrTween('d', interpolator);
+      t2 = t1.transition().duration(750).each("start", function() {
+        return currentSlice = 1;
+      }).each(function() {
+        return d3.selectAll($('.vis-tooltip.one *')).transition().style('opacity', 1);
+      });
+      t3 = t2.transition().attrTween('d', interpolator).each(function() {
+        return d3.selectAll($('.vis-tooltip.one *')).transition().duration(700).style('opacity', 0.2);
+      });
+      t4 = t3.transition().duration(750).each("start", function() {
+        return currentSlice = 2;
+      }).each(function() {
+        return d3.selectAll($('.vis-tooltip.two *')).transition().style('opacity', 1);
+      });
+      t5 = t4.transition().attrTween('d', interpolator).each(function() {
+        return d3.selectAll($('.vis-tooltip.two *')).transition().duration(700).style('opacity', 0.2);
+      });
+      t6 = t5.transition().duration(750).each(function() {
+        return d3.selectAll($('.vis-tooltip.three *')).transition().style('opacity', 1);
+      });
+      t7 = t6.transition().each(function() {
+        return d3.selectAll($('.vis-tooltip.three *')).transition().style('opacity', 0.2);
+      });
+      t8 = t7.transition().each(function() {
+        return d3.selectAll($('.vis-tooltip *')).transition().style('opacity', 0);
+      });
+      t9 = t8.transition().each(function() {
+        var highlight, p;
+        highlight = svg.selectAll('g.highlight').data(highlightData).enter().append('g').attr('class', 'highlight').style('opacity', 0).attr('transform', "translate(" + xOffset + "," + yOffset + ")");
+        p = highlight.append('path').attr('stroke', 'rgb(189,69,52)').attr('fill', 'none').attr('stroke-width', '3px').attr('stroke-linecap', 'round').attr('d', arc);
+        return highlight.transition().duration(750).style('opacity', '1');
+      });
+      t10 = t9.transition().duration(750).each(function() {
+        return d3.selectAll($('.vis-tooltip.four *')).transition().style('opacity', 1);
+      });
+      t11 = t10.transition().each(function() {
+        return d3.select('.access-cohort p').transition().style('opacity', 1);
+      });
+      t11.transition().each(function() {
+        return d3.select('.access-cohort ul').transition().style('opacity', 1);
+      });
+      return alreadyAnimated = true;
+    };
+    if (!alreadyAnimated) {
+      return fn();
     }
-  }).each(function(d) {
-    return this._current = d;
-  });
-
-  arcs.data(pie(dataset));
-
-  paths.data(pie(dataset)).transition().duration(4000).attrTween('d', arcTween);
-
-  startDataset = [
-    {
-      v: 46,
-      off: false
-    }, {
-      v: 0,
-      off: false
-    }, {
-      v: 35,
-      off: true
-    }
-  ];
-
-  arcs.data(pie(dataset));
-
-  paths.data(pie(dataset)).attr('d', arc).style('opacity', function(d) {
-    if (d.data.off) {
-      return 0;
-    } else {
-      return 1;
-    }
-  }).transition().duration(4000).attrTween('d', arcTween);
-
-  arcs.on('mouseenter', function(d, i) {
-    return d3.select(this).transition().duration(200).ease('circle').attr('transform', function(d) {
-      var dist, x, y;
-      dist = 20;
-      d.midAngle = (d.endAngle - d.startAngle) / 2 + d.startAngle;
-      x = Math.sin(d.midAngle) * dist + outerRadius;
-      y = -Math.cos(d.midAngle) * dist + yOffset;
-      return "translate(" + x + "," + y + ")";
-    });
-  });
-
-  arcs.on('mouseleave', function(d, i) {
-    return d3.select(this).transition().duration(200).ease('circle').attr('transform', "translate(" + outerRadius + "," + yOffset + ")");
-  });
-
-  arcs.append('text').attr('transform', function(d) {
-    return "translate(" + (arc.centroid(d)) + ")";
-  }).attr('text-anchor', 'middle').text(function(d) {
-    return d.value;
-  });
-
-  pie.value(function(d) {
-    return d.value;
-  });
-
-  highlightArcs = svg.selectAll('g.highlight').data(pie(highlightData)).enter().append('g').attr('class', 'highlight').attr('transform', "translate(" + outerRadius + "," + yOffset + ")");
-
-  highlightArcs.append('path').attr('stroke', function(d) {
-    if (d.data.off) {
-      return 'none';
-    } else {
-      return 'black';
-    }
-  }).attr('fill', 'none').attr('stroke-linecap', 'round').attr('d', arc);
+  };
 
 }).call(this);
