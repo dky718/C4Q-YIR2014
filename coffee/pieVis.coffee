@@ -37,36 +37,40 @@ interpolator = (d, i) ->
     else ""
 
 alreadyAnimated = false
+transitionTime = 1500
+pieTransitionTime = 750
+fadeOutTime = 700
 window.c4qD3AnimatePie = () ->
   fn = ->
     paths = arcs.append('path').attr 'fill', (d,i) -> color i
 
-    t1 = paths.transition().duration(750)
+    t1 = paths.transition().duration(pieTransitionTime)
       .attrTween('d', interpolator)
 
-    t2 = t1.transition().duration(750)
+    t2 = t1.transition().duration(transitionTime)
       .each "start", -> currentSlice = 1
       .each -> d3.selectAll($('.vis-tooltip.one *')).transition().style('opacity', 1)
 
-    t3 = t2.transition().attrTween('d', interpolator)
-      .each -> d3.selectAll($('.vis-tooltip.one *')).transition().duration(700).style('opacity', 0.2)
+    t3 = t2.transition().duration(pieTransitionTime).attrTween('d', interpolator)
+      .each -> d3.selectAll($('.vis-tooltip.one *')).transition().duration(fadeOutTime).style('opacity', 0.2)
 
-    t4 = t3.transition().duration(750)
+    t4 = t3.transition().duration(transitionTime)
       .each "start", -> currentSlice = 2
       .each -> d3.selectAll($('.vis-tooltip.two *')).transition().style('opacity', 1)
 
-    t5 = t4.transition().attrTween('d', interpolator)
-      .each -> d3.selectAll($('.vis-tooltip.two *')).transition().duration(700).style('opacity', 0.2)
+    t5 = t4.transition().duration(pieTransitionTime).attrTween('d', interpolator)
+      .each -> d3.selectAll($('.vis-tooltip.two *')).transition().duration(fadeOutTime).style('opacity', 0.2)
 
-    t6 = t5.transition().duration(750)
+    t6 = t5.transition().duration(transitionTime)
       .each -> d3.selectAll($('.vis-tooltip.three *')).transition().style('opacity', 1)
+
     t7 = t6.transition()
       .each -> d3.selectAll($('.vis-tooltip.three *')).transition().style('opacity', 0.2)
 
     t8 = t7.transition()
       .each -> d3.selectAll($('.vis-tooltip *')).transition().style('opacity', 0)
 
-    t9 = t8.transition()
+    t9 = t8.transition().duration(pieTransitionTime)
       .each ->
         highlight = svg.selectAll('g.highlight').data(highlightData)
           .enter()
@@ -74,16 +78,16 @@ window.c4qD3AnimatePie = () ->
             .attr('class', 'highlight')
             .style('opacity', 0)
             .attr 'transform', "translate(#{xOffset},#{yOffset})"
-        p = highlight.append('path')
+        highlight.append('path')
           .attr('stroke', 'rgb(189,69,52)')
           .attr('fill', 'none')
           .attr('stroke-width', '3px')
           .attr('stroke-linecap', 'round')
           .attr 'd', arc
-        highlight.transition().duration(750)
+        highlight.transition().duration(transitionTime)
           .style('opacity', '1')
 
-    t10 = t9.transition().duration(750)
+    t10 = t9.transition().duration(transitionTime)
       .each -> d3.selectAll($('.vis-tooltip.four *')).transition().style('opacity', 1)
     t11 = t10.transition()
       .each -> d3.select('.access-cohort p').transition().style('opacity', 1)
