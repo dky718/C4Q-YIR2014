@@ -611,22 +611,42 @@
 						<p class="center"><em>A Sneak Peek at 2015</em></p>
 					</section>
 
-					<section data-background="">
+					<section data-background="" id="access-code-two">
 						<div class="center">
 							<p class="toptitle">Access Code 2.0</p>
 							<hr class="title">
-							<h3>We want to create new pathways that expand and strength the tech ecosystem. This will help the tech industry grow and increase income mobility for more New Yorkers.</h3>
+                            <h3>We want to create new pathways that expand and strength the tech ecosystem.
+                                This will help the tech industry grow and increase income mobility for more New Yorkers.</h3>
+                            <h4 class="education">Education of New Yorkers</h4>
                             <div id="pie-chart"></div>
+                            <div class="vis-tooltip one">
+                              <div class="left-arrow"></div>
+                              <span class="tooltip">46% high school or less</span>
+                            </div>
+                            <div class="vis-tooltip two">
+                              <div class="left-arrow"></div>
+                              <span class="tooltip">19% some college</span>
+                            </div>
+                            <div class="vis-tooltip three">
+                              <div class="left-arrow"></div>
+                              <span class="tooltip">35% Bachelor's degree or higher</span>
+                            </div>
+                            <div class="vis-tooltip four">
+                              <div class="left-arrow"></div>
+                              <span class="tooltip">65% of New Yorker's do not have college degrees</span>
+                            </div>
 						</div>
-						<p>Our Access Code 2.0 cohort:</p>
-						<ul>
-							<li>Talented adults 18+ who want to learn to code and gain jobs in tech</li>
-							<li>50% women; 50% underrepresented minorities; 50% immigrants</li>
-							<li>50% without 4-year college degrees</li>
-							<li>Average incoming participant salary $24,000</li>
-							<li>Participant annual salary no more than $45,000</li>
-							<li>No background in coding required</li>
-						</ul>
+                        <div class="access-cohort">
+                          <p>Our Access Code 2.0 cohort:</p>
+                          <ul>
+                              <li>Talented adults 18+ who want to learn to code and gain jobs in tech</li>
+                              <li>50% women; 50% underrepresented minorities; 50% immigrants</li>
+                              <li>50% without 4-year college degrees</li>
+                              <li>Average incoming participant salary $24,000</li>
+                              <li>Participant annual salary no more than $45,000</li>
+                              <li>No background in coding required</li>
+                          </ul>
+                        </div>
 					</section>
 
 					<section>
@@ -737,7 +757,6 @@
   		<script src="js/d3.js"></script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="js/tipped.js"></script>
 		<script src="js/responsiveslides.js"></script>
 		<script src="js/jquery-ui.js"></script>
         <script src="js/d3.min.js"></script>
@@ -772,7 +791,7 @@
           $(function() {
             $(".rslides").responsiveSlides({ speed: 600, timeout: 3000 });
           });
-          function c4qHightNavCircle(verticalIndex) {
+          function c4qHighlightNavCircle(verticalIndex) {
             var items = $('.nav-panel ul li');
             items.each(function() { $(this).removeClass('active'); });
             $(items[verticalIndex]).addClass('active');
@@ -782,22 +801,20 @@
             $(slideEvent.currentSlide).find('.toHatch').addClass('hatch');
             $(slideEvent.currentSlide).find('.toStretchRight').addClass('stretchRight');
           }
-          function animatePieChart(slideEvent) {
+          function c4qAnimatePieChart(slideEvent) {
             if (slideEvent.indexv === 23) {
-              console.log('slideEvent: ', slideEvent);
-              console.info(slideEvent);
-              setTimeout(animatePie, 1500);
+              setTimeout(c4qD3AnimatePie, 1000);
             }
           }
           Reveal.addEventListener('slidechanged', function(e) {
-            c4qHightNavCircle(e.indexv);
+            c4qHighlightNavCircle(e.indexv);
             c4qSetAnimations(e);
-            animatePieChart(e);
+            c4qAnimatePieChart(e);
           });
           Reveal.addEventListener('ready', function(e) {
-            c4qHightNavCircle(e.indexv);
+            c4qHighlightNavCircle(e.indexv);
             c4qSetAnimations(e);
-            animatePieChart(e);
+            c4qAnimatePieChart(e);
           });
 
           $('.nav-panel li').mouseover(function() {
