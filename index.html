@@ -14,7 +14,9 @@
 		<link rel="stylesheet" href="css/animations.css" type="text/css">
 		<link rel="stylesheet" href="css/responsiveslides.css" type="text/css">
 		<link rel="stylesheet" href="css/social-share-kit.css" type="text/css">
+		<link rel="stylesheet" href="css/tipped.css" type="text/css">
 
+		<script type="text/javascript" src="js/tipped.js"></script>
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -59,7 +61,7 @@
 			<li data-text="Building the Org"><div class="circle"></div></li>
             <li data-text="New Team Members"><div class="circle"></div></li>
             <li data-text="Board of Directors"><div class="circle"></div></li>
-            <li data-text="Volunteer Chairs"><div class="circle"></div></li>
+            <li data-text="Volunteer Committee"><div class="circle"></div></li>
             <li data-text="c4q.nyc"><div class="circle"></div></li>
             <li data-text="Support"><div class="circle"></div></li>
             <li data-text="Financial"><div class="circle"></div></li>
@@ -180,7 +182,10 @@
 									<img src="img/bash.gif" style="float: left; width: 100%; margin-bottom: 1%">
 								</div>
 
+								<img src="img/unisphere.gif" style="float: left;">
+								<!--
 								<iframe width="310" height="310" src="https://sketchfab.com/models/810942f8889f457c9d3109e6ce61952e/embed?autospin=0.2&amp;autostart=0" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="" style="float: left;" class="bashoutline"></iframe>
+							-->
 								
 								<div id="techbashlogo">
 									<img src="img/techbashlogo.svg">
@@ -275,8 +280,6 @@
 						</div>
 						<div class="ourworkoutline center">
 							<p>We were the New York City host for this national Smithsonian event, the first Wikipedia edit-a-thon dedicated to Asian Pacific American content. With simultaneous events hosted at Washington D.C., Austin, San Diego, Los Angeles, we helped grow our community by sharing their stories and information on the web.</p>
-							<br/>
-							<a href="http://smithsonianapa.org/now/wikiapa-live/" class="button">Learn More</a>
 						</div>
 						<div class="ourworkimage" style="height:170px; margin-bottom: 30px">
 							<img src="img/wiki1.jpg">
@@ -306,7 +309,7 @@
 							<img src="img/perscholas.png">
 							<img src="img/sb2.png">
 							<img src="img/codetowork.png">
-							<!--<img src="img/fedcap.png">-->
+							<img src="img/fedcap.png">
 						</div>
 					</section>
 
@@ -636,7 +639,7 @@
 						<div class="center">
 							<p class="toptitle">Policy & Advocacy</p>
 							<hr class="title">
-							<h3>We are exploring the creation of Special Innovation District in New York City, an urban laboratory with conditions that enable a safe space for refining technologies while incorporating public concerns.</h3>
+							<h3>We are exploring the creation of a Special Innovation District in New York City, an urban laboratory with conditions that enable a safe space for refining technologies while incorporating public concerns.</h3>
 						</div>
 						<p>Examples of Special Conditions:</p>
 						<ul>
@@ -655,9 +658,11 @@
 					</section>
 
 					<section>
-						<p class="center toptitle">Thank You</p>
-						<hr class="title">
-						<h3>A special thanks to the talented team members, advisors, and industry leaders for helping us grow this past year.</h3>
+						<div class="center">
+							<p class="toptitle">Thank You</p>
+							<hr class="title">
+							<h3>A special thanks to the talented team members, advisors, and industry leaders for helping us grow this past year.</h3>
+						</div>
 
 
 						<div class="center">
@@ -673,13 +678,11 @@
 							<h3>Join Our Newsletter and Stay Updated!</h3>
 						</div>
 
-						<!-- Begin MailChimp Signup Form -->
+						<!-- Begin MailChimp Signup Form 
 						<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 
 						<style type="text/css">
 							#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif;}
-							/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-							   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 						</style>
 
 						<div id="mc_embed_signup" class="center">
@@ -696,7 +699,7 @@
 								<div id="mce-responses" class="clear">
 									<div class="response" id="mce-error-response" style="display:none"></div>
 									<div class="response" id="mce-success-response" style="display:none"></div>
-								</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+								</div> 
 
 							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_fc350b124f578d71b6cda0beb_aa60ddf156" tabindex="-1" value=""></div>
 							    <div class="clear">
@@ -710,13 +713,14 @@
 						<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='MMERGE3';ftypes[3]='text';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='MMERGE4';ftypes[4]='text';fnames[5]='MMERGE5';ftypes[5]='text';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';fnames[10]='MMERGE10';ftypes[10]='text';fnames[11]='MMERGE11';ftypes[11]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 						<!--End mc_embed_signup-->
 
-						<div class="center" style="margin-top: 60px;">
+						<!--<div class="center" style="margin-top: 60px;">
 							<h3>Share</h3>
 							<div class="ssk-group ssk-lg">
 							    <a href="" class="ssk ssk-facebook"></a>
 							    <a href="" class="ssk ssk-twitter"></a>
 							</div>
 						</div>
+						-->
 					</section>
 				</section>
 
@@ -741,7 +745,6 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="js/responsiveslides.js"></script>
-		<script src="js/jquery-ui.js"></script>
 		<script>
   			$(function() {
     		$("#bashslide1").responsiveSlides({
@@ -772,6 +775,9 @@
           $(function() {
             $(".rslides").responsiveSlides({ speed: 600, timeout: 3000 });
           });
+          $(document).ready(function() {
+  			Tipped.create('#demo-tooltip', 'Some tooltip text');
+		  });
           function c4qHightNavCircle(verticalIndex) {
             var items = $('.nav-panel ul li');
             items.each(function() { $(this).removeClass('active'); });
