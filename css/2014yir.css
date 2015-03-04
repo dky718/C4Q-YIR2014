@@ -256,6 +256,26 @@ div.ourworklogo{
 #c4qeduimg{
 	margin-top: 45px;
 }
+ul.futurelist{
+	margin-left: 0;
+	padding-left: 0;
+	list-style-position: inside;
+}
+.futurelist li>p{
+	padding-left: 120em;
+}
+/*ul.plus{
+	list-style: none;
+	margin-left: 0;
+    padding-left: 0;
+}
+	.plus li:before{
+		content: "+  ";
+	    padding-right: 5px;
+	}
+	.plus li>p{
+		padding-left: 1.7em;
+	}*/
 input{
 	padding: 20px;
 	font-size: 14px;
@@ -305,6 +325,7 @@ input:focus{
 }
 	.chapterslide h2{
 		font-size: 2em;
+		margin-top: 320px;
 	}
 
 /*********************************************
