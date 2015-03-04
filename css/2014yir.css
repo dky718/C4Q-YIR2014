@@ -32,7 +32,7 @@ hr.title{
 	color:#000;
 	background-color:#3CB54A;
 	border: none;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 h4{
 	text-transform: uppercase;
@@ -111,6 +111,10 @@ p.quotation{
 		position: relative;
 	    bottom: 100px;
 	}
+.column3 .columnblock{
+	margin-bottom: 40px;
+}
+
 ul.plus{
 	list-style: none;
 	margin-left: 0;
@@ -146,7 +150,9 @@ ul#boardnews{
 		border: none;
 		margin-bottom: 10px;
 	}
-
+#volunteercommittee p{
+	margin-bottom: 5px;
+}
 img.support_logo{
 	margin: 20px;
 }
@@ -190,7 +196,7 @@ p.ourworktitle{
 }
 div.ourworkoutline{
 	border: 6px solid #ffffff;
-	padding: 40px;
+	padding: 40px 40px 20px 40px;
 	max-width: 400px;
 	color: #ffffff;
 	float: left;
