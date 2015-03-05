@@ -289,7 +289,9 @@ body {
 	margin-bottom: 1em;
 	line-height: 1.2em;
 }
-
+.reveal p:last-child {
+	margin-bottom: .6em;
+}
 .reveal q,
 .reveal blockquote {
 	quotes: none;

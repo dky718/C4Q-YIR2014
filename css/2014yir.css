@@ -112,7 +112,7 @@ p.quotation{
 	    bottom: 100px;
 	}
 .column3 .columnblock{
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 }
 
 ul.plus{
@@ -130,15 +130,17 @@ ul.plus{
 ul#boardnews{
 	padding-left: 1em;
 }
+.qtmsvg{
+	width: 200px;
+}
 #qtmlogos{
-	padding: 20px;
+	padding: 50px 20px 20px 20px;
 }
 #qtmlogos img{
-	max-width: 140px;
-	max-height: 65px;
+	max-width: 110px;
+	max-height: 60px;
 	padding: 10px;
 }
-
 	#volunteercommittee img{
 		margin-bottom: 5px;
 	}
@@ -208,11 +210,27 @@ div.ourworksolid{
 	width: auto;
 	float: left;
 }
+#qtmdescription{
+	background-color: #ffffff;
+	padding: 60px 20px 0 20px;
+	width: auto;
+	height: 680px;
+	float: left;
+	width: 300px;
+	background-color: #000000;
+	color: #ffffff;
+}
 div.ourworkimage{
 	background-color: #ffffff;
 	border: 6px solid #ffffff;
 	float: left;
 	margin: 20px;
+}
+#qtmlogogrid{
+	width: 600px;
+	height: 680px;
+	border-color: #000000;
+	margin: 0px;
 }
 div.ourworkimage p{
 	padding: 20px 30px;

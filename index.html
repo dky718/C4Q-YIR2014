@@ -61,7 +61,7 @@
             <li data-text="Volunteer Committee"><div class="circle"></div></li>
             <li data-text="c4q.nyc"><div class="circle"></div></li>
             <li data-text="Support"><div class="circle"></div></li>
-            <li data-text="Financial"><div class="circle"></div></li>
+            <li data-text="Financials"><div class="circle"></div></li>
 
             <li data-text="Just Getting Started"><div class="circle"></div></li>
             <li data-text="Access Code 2.0"><div class="circle"></div></li>
@@ -205,12 +205,12 @@
 					<!-- QTM EVENTS -->
 					<section data-background="img/qtm/qtm.jpg">
 						<div class="center">
-							<div class="ourworksolid center" style="width: 300px; background-color: #000000; color: #ffffff">
-								<img src="img/qtm.svg" style="width: 200px;">
+							<div id="qtmdescription">
+								<img src="img/qtm.svg" class="qtmsvg">
 								<hr class="title">
-								<p>The 2014 Queens Tech Meetup family of startup demoes and presenters</p>
+								<p>Queens Tech Meetup (QTM) has grown to over 2,000 technologists, entrepreneurs, and startups.</p>
 							</div>
-							<div class="ourworkimage" style="width: 600px; border-color: #000000; margin: 0px;">
+							<div class="ourworkimage" id="qtmlogogrid">
 								<div id="qtmlogos" class="center">
 									<img src="img/qtm/athleteminder.png">
 									<img src="img/qtm/chatwala.jpg">
@@ -234,7 +234,8 @@
 									<img src="img/qtm/syncwords.png">
 									<img src="img/qtm/uberrush.jpeg">
 									<img src="img/qtm/vengo.png">
-									<img src="img/qtm/zola.png"><div class="queenstechcomp"></div>
+									<img src="img/qtm/zola.png">
+									<p>The 2014 Queens Tech Meetup Family of Startup Demoes and Presenters</p>
 								</div>
 							</div>
 						</div>
@@ -302,9 +303,8 @@
 							<p>Kicking off the inaugural Tech Talent Summit, more than 100 attendees—representing over 75 community organizations, tech companies, foundations, and elected officials—gathered to discuss the future of the City’s workforce development and its Tech Talent Pipeline. We co-organized the summit to solicit feedback and best practices from the community, helping shape the future investments in education and the City’s technology sector.</p>
 						</div>
 
-						<div id="summitpartners" class="ourworkoutline" style="max-width: 700px;">
+						<div id="summitpartners" class="ourworkoutline">
 							<p><em>Organized by</em></p>
-							<br/>
 							<img src="img/nytm.png">
 							<img src="img/c4q.png">
 							<img src="img/perscholas.png">
@@ -353,7 +353,6 @@
 						<div>
 							<div id="c4qedudesc" class="ourworkoutline center">
 								<p>In 2014 we launched C4Q EDU, volunteer-driven workshops led by industry experts that provide opportunities for our community to learn new skills and to share expertise.</p>
-								<br/>
 								<div class="center">
 									<a href class="button">Learn More</a>
 								</div>
@@ -375,12 +374,10 @@
 							<hr class="title">
 						</div>
 
-						<br/><br/>
-
 						<div class="ourworkoutline center">
 							<p>We knew that our Access Code 1.0 graduates had passion, dedication, and hustle but we are amazed at how much they have been able to achieve in such a short period of time. We are thrilled to be able to share in their success and look forward to the great things to come.</p>
 						</div>
-						<br/>
+
 						<!-- TODO resize companies into square format -->
 						<div class="ourworkimage center">
 							<p><em>Where Our Graduates Were Hired</em></p>
@@ -391,12 +388,11 @@
 					<section data-background="img/accesscodedemo3.jpg">
 						<div class="ourworkoutline">
 							<p>Access Code Graduate Salary Increase</p>
-							<div class="graph-bar bar-2013 toStretchRight"></div><br/>
+							<div class="graph-bar bar-2013 toStretchRight"></div>
 							<div class="graph-bar bar-2014 toStretchRight"></div>
 						</div>
 						<div class="ourworkoutline center" style="width: 600px;">
-							<p><em><br/>"Access Code was a phenomenal experience for me, and I’m very grateful for the opportunity I had to be a founding student. It catapulted me into a career in tech... [the] experience has also given me the confidence to pursue more skills..."</em></p>
-							<br/>
+							<p><em>"Access Code was a phenomenal experience for me, and I’m very grateful for the opportunity I had to be a founding student. It catapulted me into a career in tech... [the] experience has also given me the confidence to pursue more skills..."</em></p>
 							<p>Eli Bierman, Access Code 1.0</p>
 						</div>
 
@@ -416,14 +412,14 @@
 						<div class="center">
 							<h3>We welcomed new members to the team.</h3>
 						</div>
-						<br/>
+
 						<p>We're growing an interisciplinary team of talented individials joined by our shared passion for increasing economic opportunity for <em>all</em> New Yorkers. Not only do our new teammates add a breadth of skillsets to our toolbox, they bring great energy and enthusiasm to our work.</p>
 						</br/>
 
 						<div class="center">
 							<em>Backgrounds &amp; Skillsets</em></br/>
 							<img src="img/teambackskills.gif">
-							<p>C4Q is growing, and we're looking to hire the best and brightest to help us achieve our mission.</p><br/>
+							<p>C4Q is growing, and we're looking to hire the best and brightest to help us achieve our mission.</p>
 							<a href="http://www.c4q.nyc/careers/" class="button">Join Our Team</a>
 						</div>
 					</section>
@@ -484,7 +480,6 @@
 						<p class="center toptitle">Volunteer Committee</p>
 						<hr class="title">
 						<h3 class="center">We established a Volunteer Chair Committee to help lead new initiatives and offer their expertise.</h3>
-						<br/>
 
 						<div class="column3">
 							<div class="center">
@@ -494,7 +489,6 @@
 								<p>Dion Ridley</p><p class="subtitle">‎CTO of Merus</p>
 								<p>Dan Vingo</p><p class="subtitle">‎Software Engineer</p>
 							</div>
-							<br/>
 							<div class="center">
 								<img src="img/marketing.svg">
 								<p><em>Marketing</em></p>
@@ -513,7 +507,6 @@
 								<p>Dan Calamai</p><p class="subtitle">Director of Implementation Services at Operative‎</p>
 								<p>Aaron Cohen</p><p class="subtitle">‎Venture Director at Fueled</p>
 							</div>
-							<br/>
 							<div class="center">
 								<img src="img/fundraising.svg">
 								<p><em>Fundraising</em></p>
@@ -530,7 +523,6 @@
 								<p>Gregory Gundersen</p><p class="subtitle">‎‎Bioinformatician at Mount Sinai</p>
 								<p>Alex Samuel</p><p class="subtitle">‎Software Engineer</p>
 							</div>
-							<br/>
 							<div class="center">
 								<img src="img/partnerships.svg">
 								<p><em>Partnerships</em></p>
@@ -545,11 +537,8 @@
 							<p class="toptitle">www.c4q.nyc</p>
 							<hr class="title">
 							<h3 class="center">We love our City and now our web address shows it.</h3>
-							<br/>
 							<p>In addition to launching our redesigned website, we were proud to represent Queens as a founding member of the newly created .NYC top-level domain, the official web address for New Yorkers.</p>
 							<img src="img/dotnyc.png" style="width: 100px; margin-top: 40px;">
-
-							<br/>
 						<div class="center">
                           <video src="img/c4qwebsiteanimated.mp4" autoplay loop></video>
 						</div>
@@ -560,10 +549,9 @@
 						<hr class="title">
 						<div class="center">
 							<h3>We are especially thankful for and humbled by the support we received this past year.</h3>
-						<br/>
+						
 							<p>Working with leading poverty fighting organizations and foundations like Robin Hood, the New York Community Trust, and Arbor Brothers, we believe that our work can be even more impactful and provide opportunity to more New Yorkers.</p>
 						</div>
-						<br/><br/>
 						<div class="center">
 							<p><em>New Supporters in 2014</em></p>
 							<img src="img/robinhood.jpg" style="height: 50px;" class="support_logo">
@@ -597,9 +585,8 @@
 						<div class="center">
 							<p class="toptitle">Access Code 2.0</p>
 							<hr class="title">
-                            <h3>We want to create new pathways that expand and strength the tech ecosystem.
+                            <h3>We want to create new pathways that expand and strengthen the tech ecosystem.
                                 This will help the tech industry grow and increase income mobility in New York City.</h3>
-                            <br/>
                             <div id="pie-chart"></div>
                             <div class="vis-tooltip one">
                               <div class="left-arrow"></div>
@@ -713,7 +700,7 @@
 							    <a href="" class="ssk ssk-facebook"></a>
 							    <a href="" class="ssk ssk-twitter"></a>
 							</div>
-						</div>-->
+						</div> -->
 
 					</section>
 				</section>
