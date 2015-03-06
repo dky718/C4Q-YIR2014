@@ -247,7 +247,8 @@ div.ourworklogo{
 
 }
 #summitpartners{
-	width: 600px;
+	max-width: 800px !important;
+	padding-bottom: 50px;
 }
 #summitpartners>img{
 	max-width: 125px;
@@ -256,8 +257,15 @@ div.ourworklogo{
 	vertical-align: middle;
 	margin-right: 30px;
 }
-.queenstechcomp{
-
+#hiringcompanies{
+	padding-top: 50px;
+}
+#eliquote{
+	width: 240px;
+}
+#eliquote em{
+	font-size: 1.2em;
+	line-height: 1.2em;
 }
 #policyslides img{
 	max-width: 320px;
