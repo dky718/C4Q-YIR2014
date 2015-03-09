@@ -481,7 +481,7 @@ input:focus{
   transition: opacity 0.5s;
 }
 .vis-tooltip.one, .vis-tooltip.four {
-  top: 13em;
+  top: 19em;
   right: 17em;
 }
 .vis-tooltip.one .left-arrow, .vis-tooltip.four .left-arrow {
@@ -489,7 +489,7 @@ input:focus{
   left: 26px;
 }
 .vis-tooltip.two {
-  bottom: 11em;
+  bottom: 2em;
   left: 11em;
 }
 .vis-tooltip.two .left-arrow {
@@ -502,7 +502,7 @@ input:focus{
   transform: rotate(45deg);
 }
 .vis-tooltip.three {
-  bottom: 17em;
+  bottom: 10em;
   left: 5em;
 }
 .vis-tooltip.three .left-arrow {
