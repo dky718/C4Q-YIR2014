@@ -216,9 +216,9 @@ div.ourworksolid{
 }
 #qtmdescription{
 	background-color: #ffffff;
-	padding: 60px 20px 0 20px;
+	padding: 120px 20px 0 20px;
 	width: auto;
-	height: 680px;
+	height: 551px;
 	float: left;
 	width: 300px;
 	background-color: #000000;
@@ -232,7 +232,7 @@ div.ourworkimage{
 }
 #qtmlogogrid{
 	width: 600px;
-	height: 680px;
+	height: 660px;
 	border-color: #000000;
 	margin: 0px;
 }
@@ -258,10 +258,9 @@ div.ourworklogo{
 	margin-right: 30px;
 }
 #hiringcompanies{
-	padding-top: 50px;
+	padding-top: 30px;
 }
 #eliquote{
-	width: 240px;
 }
 #eliquote em{
 	font-size: 1.2em;
@@ -271,7 +270,6 @@ div.ourworklogo{
 	max-width: 320px;
 }
 #polnad{
-	float: right;
 	margin-top: 150px;
 }
 #polnaddesc{
@@ -299,6 +297,10 @@ ul.futurelist{
 }
 .futurelist li>p{
 	padding-left: 120em;
+}
+#dotnyc{
+	width: 100px; 
+	margin-top: 40px;
 }
 /*ul.plus{
 	list-style: none;
