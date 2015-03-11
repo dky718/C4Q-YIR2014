@@ -278,7 +278,8 @@ div.ourworklogo{
 #polnaddesc2{
 	margin-top: 45px;
 }
-#polnadimg{
+.polnadimg{
+	max-height: 150px !important;
 }
 #c4qedu{
 	margin-top: 40px;
@@ -340,9 +341,6 @@ input:focus{
 
 :-ms-input-placeholder {
    color: #ffffff;
-}
-#mce-responses{
-	margin: 20px 0;
 }
 /*********************************************
  * Access Code 2.0 Animation
