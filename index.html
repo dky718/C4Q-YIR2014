@@ -86,9 +86,9 @@
 					</section>
 
 					<section data-background="img/techbashcrowd.jpg" class="chapterslide" id="mission">
-						<div style="margin-top: 120px;">
+						<div>
 							<p>Dear C4Q friends and family,</p>
-							<p>Our work is rooted in the belief that a diversity of cultures, backgrounds, and experiences is fundamental to the growth of a healthy and vibrant tech ecosystem in Queens and NYC. In 2014, we continued our work towards our goal of fostering the most inclusive and innovative tech community.</p>
+							<p>Our work is rooted in the belief that a diversity of cultures, backgrounds, and experiences is fundamental to the growth of a healthy and vibrant tech ecosystem in Queens and NYC. In 2014 we continued our work towards our goal of fostering the most inclusive and innovative tech community.</p>
 							<p>This past year, we shared in the successes of our Access Code 1.0 graduates. From winning hackathons to working at leading tech companies to being accepted into one of the most prestigious accelerators in the U.S., our students represent the immense potential and talent within our community. Inspired by their stories, we decided to expand the scope of our tech training program to serve the 64% of New Yorkers without college degrees and to further reach populations that are underserved in tech. As the dialogue surrounding the need for more opportunity in the tech sector continues to build, we are tackling this challenge head on, forging new pathways through our programs and working to increase opportunity for <em>all</em> New Yorkers.</p>
 							<p>C4Q is entering its fourth year as an organization, and we’re eager to continue learning and improving in 2015. Thank you to our amazing community of donors and sponsors who support our mission and make our work possible. And much love to our dedicated and passionate volunteers who not only multiply our impact but magnify our cause.</p>
 							<p>Jukay, Dave &amp; the C4Q Team</p>
@@ -205,8 +205,8 @@
 					</section>
 
 					<section data-background="img/BigAppsbackground.jpg" class="programslide">
-						<div class="ourworkoutline ourworklogo">
-							<img src="img/bigapps.png" class="center">
+						<div class="ourworkoutline ourworklogo center">
+							<img src="img/bigapps.png">
 						</div>
 
 						<div class="ourworkoutline">
@@ -223,15 +223,15 @@
 					</section>
 
 					<section data-background="img/NextTopMakersGroup.jpg" class="programslide">
-						<div class="ourworkoutline ourworklogo">
+						<div class="ourworkoutline ourworklogo center">
 							<img src="img/nexttopmakers.png" style="width: 300px; ">
 						</div>
 						<div class="ourworkoutline center">
 							<p>New York's Next Top Makers, organized by NYCEDC, encourages innovation and local manufacturing in NYC. We celebrated Queens Makers by hosting the first stop popup in a five borough tour.</p>
 						</div>
 
-						<div class="ourworkimage" style="width: 360px;">
-							<img src="img/nextmaker.jpg">
+						<div class="ourworkimage center" style="width: 360px;">
+							<img src="img/nextmaker.jpg" id="nextmaker">
 							<p class="center">Featuring Makers like bhold, Valentine Goods, and Amy Wu of QNSMADE, as well as manufacturer Plaxall and organizations LIC Partnership and NYDesigns.</p>
 						</div>
 					</section>
@@ -246,10 +246,10 @@
 						<div class="ourworkoutline center">
 							<p>We were the New York City host for this national Smithsonian event, the first Wikipedia edit-a-thon dedicated to Asian Pacific American content. With simultaneous events hosted at Washington D.C., Austin, San Diego, Los Angeles, we helped grow our community by sharing their stories and information on the web.</p>
 						</div>
-						<div class="ourworkimage" style="height:170px; margin-bottom: 30px">
-							<img src="img/wiki1.jpg">
+						<div class="ourworkimage center">
+							<img src="img/wiki1.jpg" id="wiki1">
 						</div>
-						<div class="ourworkimage" style="height: 250px">
+						<div class="ourworkimage center" id="wiki2">
 							<img src="img/wiki2.jpg">
 						</div>
 
@@ -289,7 +289,7 @@
 
 						</div>
 						<div>
-							<div id="polnadimg" class="ourworkimage">
+							<div id="polnadimg" class="ourworkimage center">
 								<ul id="policyslides">
 									<li><img src="img/publicsession4.jpg" alt=""></li>
 									<li><img src="img/publicsession1.jpg" alt=""></li>
@@ -307,7 +307,7 @@
 								<p class="center ourworktitle">C4Q EDU</p>
 								<hr class="title">
 							</div>
-							<div id="c4qeduimg" class="ourworkimage">
+							<div id="c4qeduimg" class="ourworkimage center">
 								<img src="img/python.jpg">
 								<p class="center" style="margin-bottom: 0px">Web &amp; Python<br/><em>Led by C4Q Education Chairs Alex &amp; Greg</em></p>
 							</div>
@@ -372,7 +372,7 @@
 
 					<section data-background="img/accesscodestudents.jpg">
 						<div class="ourworksolid">
-							<p class="center ourworktitle" style="width: 240px;">Access Code 1.0 Updates</p>
+							<p class="center ourworktitle">Access Code 1.0 Updates</p>
 							<hr class="title">
 						</div>
 
@@ -666,13 +666,12 @@
 					</section>
 
 					<!-- Last Slide -->
-					<section data-background="img/c4qballoons.jpg" class="chapterslide">
+					<section data-background="img/c4qballoons.jpg" class="endslide">
 						<div class="center">
-							<h2>Join Our Newsletter and Stay Updated!</h2>
-							<form>
-								<input type="text" placeholder="Email">
-								<input type="submit" value="Submit">
-							</form>
+							<h2>Get Involved!</h2>
+							<h3>C4Q is growing, and we're looking for passionate and talented individuals to help us expand access to tech and create an inclusive tech community.</h3>
+							<a href="http://www.c4q.nyc/careers/" class="button">Job Opportunities</a>
+							<a href="http://www.c4q.nyc/volunteer/" class="button">Volunteer</a>
 						</div>
 
 
@@ -788,5 +787,18 @@
            if (index > -1) { Reveal.slide(0, index); }
           });
         </script>
+
+        <script type="text/javascript">
+		SocialShareKit.init({
+		    selector: '.custom-parent .ssk',
+		    url: 'http://2014.c4q.nyc',
+		    text: 'Check out the @C4QNYC 2014 Year in Review',
+		    twitter: {
+		        url: 'http://2014.c4q.nyc',
+		        text: 'Check out the @C4QNYC 2014 Year in Review',
+		        via: '@C4QNYC',
+		    }
+		});
+		</script>
 	</body>
 </html>
