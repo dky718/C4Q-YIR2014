@@ -216,13 +216,52 @@ div.ourworkoutline{
 	max-width: 400px;
 	color: #ffffff;
 	float: left;
-	margin: 20px;
 }
 div.ourworksolid{
 	background-color: #ffffff;
 	padding: 20px 20px 0 20px;
 	width: auto;
 	float: left;
+}
+#bigappslogo{
+	margin-top:  100px;
+	margin-left: 130px;
+}
+#bigappsimages{
+	margin-left: 40px;
+	margin-top: 220px;
+}
+#bigappsdesc{
+	margin-top: -350px;
+	margin-left: 10px;
+}
+#nextmakerlogo{
+	margin-top: 60px;
+	margin-left: 40px;
+}
+#nextmakerdesc{
+	margin-left: 40px;
+	margin-top: 60px;
+	width: 280px;
+}
+#nextmakerimages{
+	margin-top: -140px;
+	margin-left: 100px;
+	width: 300px;
+}
+#nextmakerimages img{
+	width: 360px;
+}
+#nextmakerlogo img{
+	width: 300px;
+}
+#smithdesc{
+	margin-left: 40px;
+	margin-bottom: 40px;
+}
+#smithimage{
+	margin-left: 117px;
+	margin-right: 40px;
 }
 .endslide h2,
 .endslide h3{
@@ -246,7 +285,6 @@ div.ourworkimage{
 	background-color: #ffffff;
 	border: 6px solid #ffffff;
 	float: left;
-	margin: 20px;
 }
 #qtmlogogrid{
 	width: 600px;
@@ -260,19 +298,24 @@ div.ourworkimage p{
 div.ourworklogo{
 	width: 280px;
 }
-#smithsonian .ourworkoutline,
-#smithsonian .ourworkimage{
-
-}
 #wiki1{
 	height:170px;
 }
 #wiki2{
 	height: 250px;
 }
+#summitlogo{
+	margin-left: 80px;
+	margin-top: 150px;
+}
+#summitdesc{
+	margin-top: 80px;
+	margin-left: 40px;
+}
 #summitpartners{
-	max-width: 800px !important;
-	padding-bottom: 50px;
+	margin-top: 40px;
+	margin-left: 80px;
+	padding-bottom: 40px;
 }
 #summitpartners>img{
 	max-width: 125px;
@@ -281,36 +324,58 @@ div.ourworklogo{
 	vertical-align: middle;
 	margin-right: 30px;
 }
-#hiringcompanies{
-	padding-top: 30px;
-}
-#eliquote{
-}
-#eliquote em{
-	font-size: 1.2em;
-	line-height: 1.2em;
-}
 #policyslides img{
 	max-width: 320px;
 }
+#polnad{
+	margin-left: 100px;
+	margin-top: 40px;
+}
 #polnaddesc{
-	margin-top: 45px;
+	margin-top: 80px;
+	margin-left: 40px;
 }
 #polnaddesc2{
 	margin-top: 45px;
 }
+#polnadimg{
+	margin-left: 40px;
+	margin-top: -120px;
+}
 .polnadimg{
-	max-height: 150px !important;
+	height: 180px;
 }
 #c4qedu{
-	margin-top: 40px;
 	width: 240px;
+	margin-left: 100px;
 }
 #c4qedudesc{
-	float: left;
+	margin: 80px 0 40px 40px;
 }
 #c4qeduimg{
-	margin-top: 45px;
+}
+#aclogo{
+	margin-left: 40px;
+	margin-top: 40px;
+}
+#acdesc{
+	margin-left: 40px;
+	margin-top: 120px;
+}
+#hiringcompanies{
+	padding-top: 30px;
+	margin-top: 40px;
+	margin-left: 160px;
+}
+#acupdate{
+	margin-left: 40px;
+}
+#eliquote{
+	margin-top: 40px;
+}
+#eliquote em{
+	font-size: 1.2em;
+	line-height: 1.2em;
 }
 ul.futurelist{
 	margin-left: 0;
@@ -585,6 +650,7 @@ and (max-device-width : 480px) {
 	p.subtitle{
 		font-size: .5em;
 	}
+
 	div.ourworksolid,
 	div.ourworkimage,
 	#qtmdescription{
@@ -600,9 +666,35 @@ and (max-device-width : 480px) {
 	}
 	div.ourworkimage{
 		padding: 0;
+		border: none;
 	}
 	.column3 .columnblock{
 		height: 360px;
+	}
+
+	#bigappsdesc,
+	#bigappsimages,
+	#bigappslogo,
+	#nextmakerlogo,
+	#nextmakerdesc,
+	#nextmakerimages,
+	#polnad,
+	#polnadimg,
+	#polnaddesc,
+	#smithdesc,
+	#smithimage,
+	#summitlogo,
+	#summitdesc,
+	#summitpartners,
+	#c4qedu,
+	#c4qedudesc,
+	#c4qeduimg,
+	#aclogo,
+	#acdesc,
+	#acupdate,
+	#eliquote,
+	#hiringcompanies{
+		margin: 20px 0px;
 	}
 	#wiki1,
 	#nextmaker{
